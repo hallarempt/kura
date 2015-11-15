@@ -1,0 +1,150 @@
+#
+# Project file for project "kura"
+# Saved: 2003-03-26, 22:26:42
+#
+# Copyright (C) 2003 Boudewijn Rempt <boud@valdyas.org>
+#
+
+DESCRIPTION = Kura is an application to work with data for small-corpus languages. 
+
+VERSION = 2.1 
+
+AUTHOR = Boudewijn Rempt 
+
+EMAIL = boud@valdyas.org 
+
+SOURCES = %os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kura.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%setup.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%sitecustomize.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%__init__.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%appobj.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%db.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%dbexceptions.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%dbobj.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%dbtypes.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%ddl.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%repositoryparser.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%sql.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%unittests.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%textdb%os.sep%__init__.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%textdb%os.sep%table.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dbobj%os.sep%textdb%os.sep%textquery.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%convert.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%doc%os.sep%convert_images.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%doc%os.sep%script1.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%doc%os.sep%script2.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%doc%os.sep%script3.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%doc%os.sep%script4.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%doc%os.sep%script5.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%.BP_dlglexicon.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%.BP_frmlexicon.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%.BP_kura.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%.BP_kuratabform.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%.BP_t.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%__init__.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlgelement.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlglexchooser.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlglexeme.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlglexrelation.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlgnewtext.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlgpreferences.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlgstream.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlgtag.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlgtagtypecode.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%dlgtext.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%formtags.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%frmlexchooser.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%frmlexeme.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%frmlexrelation.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%frmlogin.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%frmpreferences.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%frmtagtype.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%frmtagtypecode.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kuracmbtags.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kuracmbtagvalues.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kurailcanvas.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kurailcanvasview.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kurastatusbar.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kuratextcanvas.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kuratextlistview.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kuratextselector.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%kurawindow.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%login.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%main.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%resource.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%tablexlex.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%tabtextprojects.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%wdgLexeme.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%wdglexeme.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuraclient%os.sep%wiznewtext.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%__init__.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%comboproxy.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%constants.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guiaction.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guicheckbox.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guicombobox.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guicombotableitem.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guiconfig.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guidatebox.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guidetaillist.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guidialog.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guiform.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guilabel.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guilineedit.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guilistbox.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guilistview.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guimultilineedit.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guinumberbox.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guisyncedit.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guitabdialog.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuragui%os.sep%guitable.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%__init__.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%docbook.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%kuraapp.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_abstract_tag.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_affc.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_catc.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_doc.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_elmt.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_eltg.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_lex.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_lngg.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_lnkc.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_lxlx.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_lxtg.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_proj.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_recd.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_refs.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_scan.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_strm.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_sttg.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_tag.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_tdmn.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_text.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_ttpc.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_txtg.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lng_user.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lngapp.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%lngobj.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%kuralib%os.sep%unittests.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%utils%os.sep%__init__.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%utils%os.sep%convert.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%utils%os.sep%convert_images.py \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%utils%os.sep%createdatamodel.py 
+
+FORMS = %os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%frmlexchooser.ui \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%frmlexeme.ui \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%frmlexrelation.ui \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%frmlogin.ui \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%frmpreferences.ui \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%frmtagtype.ui \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%frmtagtypecode.ui \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%wdglexeme.ui \
+	%os.sep%home%os.sep%boud%os.sep%doc%os.sep%books%os.sep%eric%os.sep%kura-2.0%os.sep%dialogs%os.sep%wiznewtext.ui 
+
+MAINSCRIPT = kura.py 
+
+VCS = CVS 
+
+VCSOPTIONS = {'history': ['-e', '-a'], 'diff': ['-u3', '-p'], 'export': [''], 'commit': [''], 'add': [''], 'tag': ['-c'], 'remove': ['-f'], 'update': ['-dP'], 'global': ['-f'], 'log': [''], 'status': ['-v']} 
+

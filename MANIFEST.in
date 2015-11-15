@@ -1,0 +1,4 @@
+include *
+recursive-include pixmaps *
+recursive-include doc *
+recursive-include datamodel *

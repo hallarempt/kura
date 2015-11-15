@@ -1,0 +1,248 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>tabLexeme</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>TabLexeme</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>454</width>
+            <height>297</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>lblForm</cstring>
+            </property>
+            <property name="text">
+                <string>Lexeme</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="2" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>txtForm</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>1</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>Panel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="4" column="2" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>txtLanguage</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>1</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>Panel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>lblLanguage</cstring>
+            </property>
+            <property name="text">
+                <string>Language</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="5" column="4">
+            <property name="name">
+                <cstring>bnZoom</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Edit lexeme</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="2" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>txtPhoneticForm</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>Panel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignTop|AlignLeft</set>
+            </property>
+            <property name="vAlign" stdset="0">
+            </property>
+            <property name="wordwrap" stdset="0">
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>lblPhoneticForm</cstring>
+            </property>
+            <property name="text">
+                <string>Phonetic form</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignTop|AlignLeft</set>
+            </property>
+            <property name="vAlign" stdset="0">
+            </property>
+            <property name="wordwrap" stdset="0">
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>lblGlosse</cstring>
+            </property>
+            <property name="text">
+                <string>Glosse</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="2" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>txtDescription</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>7</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>Panel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignTop|AlignLeft</set>
+            </property>
+            <property name="vAlign" stdset="0">
+            </property>
+            <property name="wordwrap" stdset="0">
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>lblDescription</cstring>
+            </property>
+            <property name="text">
+                <string>Description</string>
+            </property>
+            <property name="alignment">
+                <set>AlignTop|AlignLeft</set>
+            </property>
+            <property name="vAlign" stdset="0">
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="2" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>txtGlosse</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>7</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>Panel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <spacer row="5" column="0">
+            <property name="name" stdset="0">
+                <cstring>Spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QPushButton" row="5" column="3">
+            <property name="name">
+                <cstring>bnPick</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Select lexeme</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="5" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>bnAdd</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Add to lexicon</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

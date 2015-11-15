@@ -1,0 +1,583 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>frmlexeme</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>frmlexeme</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>527</width>
+            <height>445</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Lexical item</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>lblLexeme</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Lexeme</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>txtLexeme</cstring>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="2" rowspan="2" colspan="1">
+            <property name="name">
+                <cstring>Layout5</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonOk</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;OK</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name" stdset="0">
+                        <cstring>Spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+            </vbox>
+        </widget>
+        <widget class="QLineEdit" row="0" column="1">
+            <property name="name">
+                <cstring>txtLexeme</cstring>
+            </property>
+        </widget>
+        <widget class="QTabWidget" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>tbsLexeme</cstring>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tabLexeme</cstring>
+                </property>
+                <attribute name="title">
+                    <string>&amp;Lexeme</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>11</number>
+                    </property>
+                    <property name="spacing">
+                        <number>6</number>
+                    </property>
+                    <widget class="QLineEdit" row="0" column="1">
+                        <property name="name">
+                            <cstring>txtPhoneticform</cstring>
+                        </property>
+                        <property name="maxLength">
+                            <number>50</number>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>lblPhoneticform</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Phonetic form</string>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>txtPhoneticform</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>lblGlosse</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Glosse</string>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>txtGlosse</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="1" column="1">
+                        <property name="name">
+                            <cstring>txtGlosse</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="maxLength">
+                            <number>255</number>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>lblDescription</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Description</string>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>txtDescription</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QMultiLineEdit" row="2" column="1">
+                        <property name="name">
+                            <cstring>txtDescription</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="3" column="0">
+                        <property name="name">
+                            <cstring>lblLanguage</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Language</string>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>cmbLanguage</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QComboBox" row="3" column="1">
+                        <property name="name">
+                            <cstring>cmbLanguage</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="0">
+                        <property name="name">
+                            <cstring>lblUser</cstring>
+                        </property>
+                        <property name="text">
+                            <string>User</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="1">
+                        <property name="name">
+                            <cstring>txtUser</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Panel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="5" column="0">
+                        <property name="name">
+                            <cstring>lblDatestamp</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Last changed</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="5" column="1">
+                        <property name="name">
+                            <cstring>txtDatestamp</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Panel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tabTags</cstring>
+                </property>
+                <attribute name="title">
+                    <string>&amp;Tags</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>11</number>
+                    </property>
+                    <property name="spacing">
+                        <number>6</number>
+                    </property>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>lblTag</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Tag</string>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>cmbTag</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>lblValue</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Value</string>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>txtValue</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="3" column="0">
+                        <property name="name">
+                            <cstring>lblNone</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Note</string>
+                        </property>
+                        <property name="alignment">
+                            <set>AlignTop|AlignLeft</set>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>txtNote</cstring>
+                        </property>
+                        <property name="vAlign" stdset="0">
+                        </property>
+                    </widget>
+                    <widget class="QListBox" row="0" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>lstTags</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QMultiLineEdit" row="3" column="1">
+                        <property name="name">
+                            <cstring>txtNone</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="5" column="0">
+                        <property name="name">
+                            <cstring>txtTagDate</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Last changed</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="0">
+                        <property name="name">
+                            <cstring>lblTagUser</cstring>
+                        </property>
+                        <property name="text">
+                            <string>User</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="1">
+                        <property name="name">
+                            <cstring>txtTagUser</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Panel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="5" column="1">
+                        <property name="name">
+                            <cstring>txtTagDatestamp</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Panel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QComboBox" row="1" column="1">
+                        <property name="name">
+                            <cstring>cmbTag</cstring>
+                        </property>
+                        <property name="editable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="duplicatesEnabled">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                    <widget class="QComboBox" row="2" column="1">
+                        <property name="name">
+                            <cstring>cmbValue</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>3</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="editable">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tabFlections</cstring>
+                </property>
+                <attribute name="title">
+                    <string>&amp;Related Forms</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>11</number>
+                    </property>
+                    <property name="spacing">
+                        <number>6</number>
+                    </property>
+                    <widget class="QLabel" row="3" column="0">
+                        <property name="name">
+                            <cstring>lblLexlexuser</cstring>
+                        </property>
+                        <property name="text">
+                            <string>User</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="0">
+                        <property name="name">
+                            <cstring>lblLexlexDatestamp</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Last changed</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="3" column="1">
+                        <property name="name">
+                            <cstring>txtLexlexuser</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Panel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="1">
+                        <property name="name">
+                            <cstring>txtLexlexDatestamp</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Panel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QListBox" row="0" column="0" rowspan="1" colspan="3">
+                        <item>
+                            <property name="text">
+                                <string>New Item</string>
+                            </property>
+                        </item>
+                        <property name="name">
+                            <cstring>lstRelatedForms</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QComboBox" row="1" column="1">
+                        <property name="name">
+                            <cstring>cmbRelationcode</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>7</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>lblRelation</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Relation type</string>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>cmbRelationcode</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>lblRelatedLexeme</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Related lexeme</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="1">
+                        <property name="name">
+                            <cstring>txtRelatedlexeme</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Panel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="2" column="2">
+                        <property name="name">
+                            <cstring>bnGetLexeme</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Select Lexeme</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tabCorpus</cstring>
+                </property>
+                <attribute name="title">
+                    <string>&amp;Corpus</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>11</number>
+                    </property>
+                    <property name="spacing">
+                        <number>6</number>
+                    </property>
+                    <widget class="QTextView" row="0" column="0">
+                        <property name="name">
+                            <cstring>htmlCorpus</cstring>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tabPreview</cstring>
+                </property>
+                <attribute name="title">
+                    <string>&amp;Preview</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>11</number>
+                    </property>
+                    <property name="spacing">
+                        <number>6</number>
+                    </property>
+                    <widget class="QTextBrowser" row="0" column="0">
+                        <property name="name">
+                            <cstring>htmlPreview</cstring>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>frmlexeme</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>frmlexeme</receiver>
+        <slot>reject()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>buttonOk</tabstop>
+    <tabstop>buttonCancel</tabstop>
+</tabstops>
+<slots>
+    <slot>reselectValues(tag)</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

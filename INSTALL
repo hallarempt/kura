@@ -1,0 +1,14 @@
+Installation Instructions
+
+
+Installing is a simple matter of running:
+
+python setup.py install
+
+If you want to use the MySQL database backend you
+need to create a database and run the datamodel/config.sql
+script. If you don't know how to do that, you don't want
+to, I guess.
+
+
+Boudewijn Rempt

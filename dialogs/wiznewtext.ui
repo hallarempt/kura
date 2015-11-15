@@ -1,0 +1,669 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>wizNewText</class>
+<widget class="QWizard">
+    <property name="name">
+        <cstring>wizNewText</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>649</width>
+            <height>416</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Create a new text</string>
+    </property>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>pageRecord</cstring>
+        </property>
+        <attribute name="title">
+            <string>Basic data</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>11</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QLineEdit" row="0" column="3">
+                <property name="name">
+                    <cstring>txtTitle</cstring>
+                </property>
+                <property name="maxLength">
+                    <number>255</number>
+                </property>
+            </widget>
+            <widget class="QMultiLineEdit" row="6" column="3">
+                <property name="name">
+                    <cstring>txtDescription</cstring>
+                </property>
+            </widget>
+            <widget class="QLineEdit" row="1" column="3">
+                <property name="name">
+                    <cstring>txtUrl</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="2" column="3">
+                <property name="name">
+                    <cstring>cmbLanguage</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="3" column="3">
+                <property name="name">
+                    <cstring>cmbRecording</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="4" column="3">
+                <property name="name">
+                    <cstring>cmbScan</cstring>
+                </property>
+            </widget>
+            <widget class="QLineEdit" row="5" column="3">
+                <property name="name">
+                    <cstring>txtTranscriptionDate</cstring>
+                </property>
+                <property name="maxLength">
+                    <number>12</number>
+                </property>
+                <property name="whatsThis" stdset="0">
+                    <string>This is the date the text was first transcribed.</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="0" rowspan="7" colspan="1">
+                <property name="name">
+                    <cstring>lblDataHelp</cstring>
+                </property>
+                <property name="maximumSize">
+                    <size>
+                        <width>175</width>
+                        <height>32767</height>
+                    </size>
+                </property>
+                <property name="text">
+                    <string>Enter the basic descriptive data for this text: the title, a freeform description, links to sound recordings and manuscript scans, the basic language of the text and the date the text was transcribed.
+
+The URL can be a link to a website connected with the text. 
+
+The language is the basic language of the text: individual phrases and words can be marked to be in another language.</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop|AlignLeft</set>
+                </property>
+                <property name="vAlign" stdset="0">
+                </property>
+                <property name="wordwrap" stdset="0">
+                </property>
+            </widget>
+            <widget class="QLabel" row="1" column="2">
+                <property name="name">
+                    <cstring>lblUrl</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="text">
+                    <string>&amp;URL</string>
+                </property>
+                <property name="buddy" stdset="0">
+                    <cstring>txtUrl</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="2" column="2">
+                <property name="name">
+                    <cstring>lblLanguage</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Language</string>
+                </property>
+                <property name="buddy" stdset="0">
+                    <cstring>cmbLanguage</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="4" column="2">
+                <property name="name">
+                    <cstring>lblScan</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Scan</string>
+                </property>
+                <property name="buddy" stdset="0">
+                    <cstring>cmbScan</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="3" column="2">
+                <property name="name">
+                    <cstring>lblRecording</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Recording</string>
+                </property>
+                <property name="buddy" stdset="0">
+                    <cstring>cmbRecording</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="2">
+                <property name="name">
+                    <cstring>lblTitle</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Title</string>
+                </property>
+                <property name="buddy" stdset="0">
+                    <cstring>txtTitle</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="6" column="2">
+                <property name="name">
+                    <cstring>lblDescription</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Description</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignTop|AlignLeft</set>
+                </property>
+                <property name="buddy" stdset="0">
+                    <cstring>txtDescription</cstring>
+                </property>
+                <property name="vAlign" stdset="0">
+                </property>
+            </widget>
+            <widget class="QLabel" row="5" column="2">
+                <property name="name">
+                    <cstring>lblTranscriptionDate</cstring>
+                </property>
+                <property name="text">
+                    <string>Date</string>
+                </property>
+            </widget>
+            <widget class="Line" row="0" column="1" rowspan="7" colspan="1">
+                <property name="name">
+                    <cstring>Line1</cstring>
+                </property>
+                <property name="frameShape">
+                    <enum>VLine</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Sunken</enum>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>pageParsing</cstring>
+        </property>
+        <attribute name="title">
+            <string>Determine parsing</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>11</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QLineEdit" row="1" column="4">
+                <property name="name">
+                    <cstring>txtStreamRegExp</cstring>
+                </property>
+                <property name="text">
+                    <string>[.!?\12]</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit" row="3" column="4">
+                <property name="name">
+                    <cstring>txtMorphemeRegExp</cstring>
+                </property>
+                <property name="text">
+                    <string>[.]</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit" row="2" column="4">
+                <property name="name">
+                    <cstring>txtElementRegExp</cstring>
+                </property>
+                <property name="text">
+                    <string>[ ,:;]</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="0" rowspan="8" colspan="1">
+                <property name="name">
+                    <cstring>lblParseHelp</cstring>
+                </property>
+                <property name="maximumSize">
+                    <size>
+                        <width>175</width>
+                        <height>32767</height>
+                    </size>
+                </property>
+                <property name="text">
+                    <string>New textual data can be entered in one of two ways: by parsing plain text using regular expressions that look for punctuation of special marks.
+
+Regular expressions can parse a text on three levels: phrases, words and morphemes. 
+
+After parsing, the texts must be tagged. 
+
+If you want to parse XML text, you must currently use
+the command line.</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop|AlignLeft</set>
+                </property>
+                <property name="vAlign" stdset="0">
+                </property>
+                <property name="wordwrap" stdset="0">
+                </property>
+            </widget>
+            <widget class="Line" row="0" column="1" rowspan="8" colspan="2">
+                <property name="name">
+                    <cstring>Line2</cstring>
+                </property>
+                <property name="frameShape">
+                    <enum>VLine</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Sunken</enum>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+            </widget>
+            <widget class="QCheckBox" row="5" column="3" rowspan="1" colspan="2">
+                <property name="name">
+                    <cstring>chkLexLookup</cstring>
+                </property>
+                <property name="text">
+                    <string>Lookup words and morphemes in the lexicon.</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QCheckBox" row="4" column="3" rowspan="1" colspan="2">
+                <property name="name">
+                    <cstring>chkElmtLookup</cstring>
+                </property>
+                <property name="text">
+                    <string>Lookup words and morphemes in other texts</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QGroupBox" row="0" column="3" rowspan="1" colspan="2">
+                <property name="name">
+                    <cstring>grpParser</cstring>
+                </property>
+                <property name="title">
+                    <string>Parser</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <property name="margin">
+                        <number>11</number>
+                    </property>
+                    <property name="spacing">
+                        <number>6</number>
+                    </property>
+                    <widget class="QRadioButton" row="0" column="0">
+                        <property name="name">
+                            <cstring>rdbRegExp</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Parse using regular expressions</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton" row="1" column="0">
+                        <property name="name">
+                            <cstring>rdbXML</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>Parse XML-markup text</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QLabel" row="1" column="3">
+                <property name="name">
+                    <cstring>lblStreamRegExp</cstring>
+                </property>
+                <property name="text">
+                    <string>Stream regular expression</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="2" column="3">
+                <property name="name">
+                    <cstring>lblElementRegexp</cstring>
+                </property>
+                <property name="text">
+                    <string>Word regular expression</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="3" column="3">
+                <property name="name">
+                    <cstring>lblMorphemeRegExp</cstring>
+                </property>
+                <property name="text">
+                    <string>Morpheme regular expression</string>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>pageText</cstring>
+        </property>
+        <attribute name="title">
+            <string>Enter the prepared text</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>11</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QPushButton" row="0" column="1">
+                <property name="name">
+                    <cstring>bnLoad</cstring>
+                </property>
+                <property name="text">
+                    <string>Load from File</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="0">
+                <property name="name">
+                    <cstring>lblTextHelp</cstring>
+                </property>
+                <property name="text">
+                    <string>Either paste a text (plain text in utf-8 Unicode encoding), or open a text with the Load from File button.</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop|AlignLeft</set>
+                </property>
+                <property name="vAlign" stdset="0">
+                </property>
+                <property name="wordwrap" stdset="0">
+                </property>
+            </widget>
+            <widget class="QProgressBar" row="2" column="0" rowspan="1" colspan="2">
+                <property name="name">
+                    <cstring>progressParsing</cstring>
+                </property>
+                <property name="frameShape">
+                    <enum>Panel</enum>
+                </property>
+            </widget>
+            <widget class="QMultiLineEdit" row="1" column="0" rowspan="1" colspan="2">
+                <property name="name">
+                    <cstring>txtRawText</cstring>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>pageParseTree</cstring>
+        </property>
+        <attribute name="title">
+            <string>Check parse tree</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>11</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QListView" row="0" column="2">
+                <column>
+                    <property name="text">
+                        <string>Type</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizeable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Text</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizeable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Lexeme</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizeable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <property name="name">
+                    <cstring>lsvParseTree</cstring>
+                </property>
+                <property name="rootIsDecorated">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="0">
+                <property name="name">
+                    <cstring>lblParseTreeHelp</cstring>
+                </property>
+                <property name="maximumSize">
+                    <size>
+                        <width>175</width>
+                        <height>32767</height>
+                    </size>
+                </property>
+                <property name="text">
+                    <string>You can check the result of the parsing in this treeview. It shows the streams, words and morphemes, and lexemes and morphemes found by these items.
+
+If you want to make corrections, please edit the prepared text and parse again.</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop|AlignLeft</set>
+                </property>
+                <property name="vAlign" stdset="0">
+                </property>
+                <property name="wordwrap" stdset="0">
+                </property>
+            </widget>
+            <widget class="Line" row="0" column="1">
+                <property name="name">
+                    <cstring>Line4</cstring>
+                </property>
+                <property name="frameShape">
+                    <enum>VLine</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Sunken</enum>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>pageProjects</cstring>
+        </property>
+        <attribute name="title">
+            <string>Choose projects</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>11</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QListBox" row="0" column="2">
+                <property name="name">
+                    <cstring>lsbProjects</cstring>
+                </property>
+                <property name="selectionMode">
+                    <enum>Extended</enum>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="0">
+                <property name="name">
+                    <cstring>lblProjectChooser</cstring>
+                </property>
+                <property name="maximumSize">
+                    <size>
+                        <width>175</width>
+                        <height>32767</height>
+                    </size>
+                </property>
+                <property name="text">
+                    <string>Pick all projects this text is relevant to. You can make an extended selection by pressing CTRL and clicking on a project.</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop|AlignLeft</set>
+                </property>
+                <property name="vAlign" stdset="0">
+                </property>
+                <property name="wordwrap" stdset="0">
+                </property>
+            </widget>
+            <widget class="Line" row="0" column="1">
+                <property name="name">
+                    <cstring>Line6</cstring>
+                </property>
+                <property name="frameShape">
+                    <enum>VLine</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Sunken</enum>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>pageReady</cstring>
+        </property>
+        <attribute name="title">
+            <string>Ready</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>11</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QLabel" row="0" column="0">
+                <property name="name">
+                    <cstring>lblDone</cstring>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>24</pointsize>
+                        <bold>1</bold>
+                        <italic>1</italic>
+                    </font>
+                </property>
+                <property name="text">
+                    <string>Done!</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignCenter</set>
+                </property>
+                <property name="hAlign" stdset="0">
+                </property>
+            </widget>
+            <widget class="QLabel" row="1" column="0">
+                <property name="name">
+                    <cstring>lblDoneHelp</cstring>
+                </property>
+                <property name="text">
+                    <string>The new text has been parsed; you can now press Finish, and it will be entered in the Kura database. From that moment you can edit and analyze it in the Kura desktop client.</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop|AlignLeft</set>
+                </property>
+                <property name="vAlign" stdset="0">
+                </property>
+                <property name="wordwrap" stdset="0">
+                </property>
+            </widget>
+        </grid>
+    </widget>
+</widget>
+<tabstops>
+    <tabstop>txtTitle</tabstop>
+    <tabstop>txtUrl</tabstop>
+    <tabstop>cmbLanguage</tabstop>
+    <tabstop>cmbRecording</tabstop>
+    <tabstop>cmbScan</tabstop>
+    <tabstop>txtTranscriptionDate</tabstop>
+    <tabstop>txtDescription</tabstop>
+    <tabstop>rdbRegExp</tabstop>
+    <tabstop>rdbXML</tabstop>
+    <tabstop>txtStreamRegExp</tabstop>
+    <tabstop>txtElementRegExp</tabstop>
+    <tabstop>txtMorphemeRegExp</tabstop>
+    <tabstop>chkElmtLookup</tabstop>
+    <tabstop>chkLexLookup</tabstop>
+    <tabstop>bnLoad</tabstop>
+    <tabstop>txtRawText</tabstop>
+    <tabstop>lsvParseTree</tabstop>
+    <tabstop>lsbProjects</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

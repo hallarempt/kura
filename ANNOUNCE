@@ -1,0 +1,57 @@
+                          Kura 2.0 
+------------------------------------------------------------------
+I am pleased to announce the second release of Kura.
+
+Kura is a complete system for the handling of linguistic data, especially
+fieldwork data from small-corpus languages. It allows users to enter
+texts in any language, analyze those texts and bring the analyzed
+linguistic facts into relation with each other. 
+
+This is the second full release of Kura for Unix/X11. Kura no longer supports
+Windows.
+
+
+Kura is available at:
+
+   http://www.valdyas.org/linguistics/index.html
+   
+There is both an rpm package and a tarball.
+
+   http://www.xs4all.nl/linguistics/kura-2.0-1.rpm
+   http://www.xs4all.nl/linguistics/kura-2.0.tgz
+
+Boudewijn Rempt | boud@valdyas.org
+
+------------------------------------------------------------------
+
+Features
+
+New in this release are:
+  
+  * Support for files to store data. MySQL is still fully supported.
+  * port to Qt 3.x (which means better Unicode support).
+  * A very complete manual.
+  * Dropped support for parse sets.
+  * An improved interlinear text editor.
+  * Drag and drop from Kura to editors.
+  * Export to docbook sgml.
+  * Many, many bugfixes.
+
+------------------------------------------------------------------
+
+Kura uses the following run-time components: MySQL, MySQLdb,
+Python, PyQt.  MySQL is no longer absolutely necessary.
+
+------------------------------------------------------------------
+License
+
+Kura is free software and distributed under the Python license.
+This means that anyone can download and use Kura for free,
+anyone can alter Kura to his or her own liking and distribute
+the altered version free or for profit. However any changes must
+be contributed back to the me, and I have the right to incorporate
+those changes in new, free versions of Kura.
+------------------------------------------------------------------
+<P><A HREF="http://www.valdyas.org/linguistics">Kura 2.0</A>
+ - Kura is an application for the analysis and presentation of linguistic
+ data.  (16-Nov-2002)

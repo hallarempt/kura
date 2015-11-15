@@ -1,0 +1,8 @@
+* Uses Qt 3.x (which gives far better Unicode support)
+* Export menu option (exports to docbook)
+* Hooks for generating docbook
+* New formatting option for interlinear presention of elements: element_glosse. (the dot
+  is vital!)
+* New config file system
+* Added fields to some tables (references, lexicon mainly)
+* Added an example of a grammar generation project

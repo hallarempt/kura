@@ -1,0 +1,3670 @@
+<!doctype book public "-//OASIS//DTD DocBook V4.1//EN"
+ [  
+    <!entity references system "references.sgml">
+ ]
+>
+<book>
+  <title>Kura</title>
+  <subtitle>The Manual</subtitle>
+
+  <bookinfo>
+    <author>
+      <firstname>Boudewijn</firstname>
+      <surname>Rempt</surname>
+    </author>
+    
+    <pubdate>November 2002</pubdate>
+    
+    <copyright>
+      <year>2002</year>
+      <holder>Boudewijn Rempt</holder>
+    </copyright>
+    
+    <legalnotice>
+      <para>Although every reasonable effort has been made to
+        incorporate accurate and useful information into this book,
+        the copyright holders make no representation about the
+        suitability of this book or the information therein for any
+        purpose. It is provided <quote>as is</quote> without expressed
+        or implied warranty.</para>
+    </legalnotice>
+
+
+  </bookinfo>
+
+  <preface>
+
+    <title>Preface</title>
+
+    <para>Kura is an application for linguists working with fieldwork
+      or manuscript data. It supports the entry, analysis and
+      presentation of linguistic data, be it recordings or
+      manuscripts. it is a multi-user, multi-language, multi-project
+      application, meaning that more linguists can simultaneously work
+      with all data, and that the data is not restricted to one
+      language. Besides, Kura has the notion of projects, and all data
+      can be handled within any project.</para>
+
+    <para>All linguistic data is stored in parsed form, facilitating
+      quick analysis, and the relations between data can also be
+      stored. Kura uses a relational database for this, and the
+      database can grow to enormous sizes (gigabytes) without any
+      problems. Still, Kura is in the first place designed for
+      linguists working on data gathered during fieldwork, and those
+      corpora will in all likelyhood be relatively small.</para>
+
+    <para>Kura consists of three main parts: the database with a set
+      of relatively sophisticated components that represent linguistic
+      notions, such as text or lexeme, the desktop client that can be
+      used to enter data and analysises, and the special-purpose
+      webserver, that can present the linguistic data to the outside
+      world.</para>
+
+    <para>Kura is network transparent. Given an internet connection,
+      users of Kura can use their desktop client to connect to any
+      Kura database anywhere in the world they have access to. </para>
+
+    <para>But there is also an option to work stand-alone. You don't
+      have to use the database: all data can also be stored in a file.
+      This may be more comfortable for people who don't want to
+      install and maintain a database server or who prefer an easy way
+      to exchange sets of data.</para>
+
+    <para>Kura is extensible. The application is written in Python,
+      the programming language of choice for subject experts and it is
+      easy to develop and use other modules, such as parsers. Because
+      Kura is open source software, it is easy to adapt any component
+      to the special needs of the user.</para>
+
+    <para>Kura's datamodel is also extensible. Relations between
+      elements in a text and lexemes can be created and tagged with a
+      user extensible set of tags. Likewise, elements in a text can be
+      related to each other as can lexemes. It is easy to create
+      diachronic relations between lexemes from different languages,
+      or synchronic relations between relations in a language.
+      Finally, all elements in Kura, text, phrase, word or lexeme can
+      be describe using a user-definable set of characteristics. The
+      default distribution of Kura includes an example set of these
+      characteristics.</para>
+
+    <para>Kura uses only one character set: Unicode. Currently
+      restricted to the Basic Multilingual Plane, this already enables
+      the use of the vast majority of scripts in current use. Kura
+      supports that standard OS-supplied tools to enter text in
+      non-western scripts, like XIM on X11 or IME's on Windows.</para>
+
+    <para>Kura runs both on Windows and Unix/X11. However, all
+      development is done using Unix/X11. Kura for Windows is free
+      software, but the libraries need to run Kura on Windows (and the
+      OS itself) are not free, and need to be acquired by the user who
+      elects to use Windows.</para>
+
+    <section><title>Features</title>
+      <itemizedlist>
+        <listitem><para>multi-user</para>
+        </listitem>
+        <listitem><para>multi-language</para>
+        </listitem>
+        <listitem><para>multi-project</para>
+        </listitem>
+        <listitem><para>network-transparent</para>
+        </listitem>
+        <listitem><para>integration of recordings and
+            manuscripts</para>
+        </listitem>
+        <listitem><para>extensible both through a dynamic data model
+            and through adding code.</para>
+        </listitem>
+        <listitem><para>open-source</para>
+        </listitem>
+        <listitem><para>100% Unicode</para>
+        </listitem>
+        <listitem><para>Support for standard tagsets</para>
+        </listitem>
+        <listitem><para>Generation of documents in docbook (which can
+            be used to produce html or pdf, in the future rtf,
+            too).</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section><title>Requirements</title>
+
+      <para>Kura 2.0 requires the following components to be
+        present:</para>
+
+      <itemizedlist>
+        <listitem><para><ulink url="http://www.python.org">Python
+              2.1</ulink> or greater</para>
+        </listitem>
+        <listitem><para>optionally: <ulink url="http://www.mysql.org">
+          MySQL 2.23.27</ulink> or greater and <ulink url=
+          "http://sourceforge.net/projects/mysql-python/">mysql-python
+            </ulink>.</para>
+        </listitem>
+        <listitem><para><ulink url="http://www.trolltech.com">Qt
+              3.0.0</ulink> or greater</para>
+        </listitem>
+        <listitem><para><ulink url="http://www.riverbankcomputing.co.uk"> 
+              PyQt 3.0</ulink> or greater</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>I track the development of these runtime components pretty
+        closely, so it's a good bet that the cvs version of Kura will
+        always require the latest versions.</para>
+    </section>
+  </preface>
+
+  <chapter id="introduction"><title>Introduction</title>
+
+    <section><title>Principles</title>
+
+      <para>Kura is build around the idea of linguistic data.
+        Linguistic data are stored in a database and relations between
+        the data are then created, either by the linguist, or
+        automatically.</para>
+
+      <para>There are four core types of linguistic data: texts,
+        recordings, scans and lexicon. Of these, texts and lexicon are
+        analyzed by Kura. Recordings of fieldwork sessions or scans of
+        manuscripts are related to texts. You can generate documents
+        or websites that include scanned images or point to field
+        recordings.</para>
+    </section>
+
+
+    <section><title>Parsed text</title>
+
+      <para>In contrast to other systems, like Shoebox, Kura stores
+        texts in parsed and tagged form in the database. This makes it
+        easier to create relations, but more difficult to re-assemble
+        complete texts. The relations between the words in a text and
+        the lexemes in the lexicon are stored too; the lexicon can
+        also be used to dynamically tag texts.</para>
+    </section>
+    <section><title>Multi-user</title>
+
+          <para>Kura stores facts about many languages and can be used
+          by many users. Which linguistic fact has been entered by
+          which user is recorded, too, so it is always possbile to
+          account for the data in a scholarly way. Currently Kura does
+          not record the change history of a linguistic fact.</para>
+    </section>
+    <section><title>Publishing</title>
+
+      <para>After data has been entered, it is possible to publish
+        it. Kura can be used together with the Grammar project to
+        create complex, dynamic documents in either html or pdf for.
+        Using hyperlinks, users of the data can trace their own path
+        through a language. For instance, when reading a certain text,
+        a user might want to look up a word in the lexicon. He clicks
+        on the word in the lexicon, and Kura shows the lexeme, and all
+        the sentences where that lexeme occurs in the corpus.</para>
+    </section>
+
+    <section><title>tags</title>
+
+      <para>Kura is extensible: every important language fact can be
+        annotated with user-defined tags. For instance, a text can be
+        tagged with one or more references, and a word in a text with
+        a glosse, a translation, a syntactical function or another
+        bibliographic reference. Kura leaves you free in the creation
+        of these tags, but provides an extensive set of basic
+        tags.</para>
+    </section>
+
+    <section><title>Terminology</title>
+
+        <glosslist>
+          <glossentry>
+            <glossterm>text</glossterm>
+            <glossdef><para>A text from a certain language; a
+                connected narrative. Texts can be associated with
+                recordings or scanned manuscripts.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm id="streamdefined">stream</glossterm>
+            <glossdef><para>Sentences in a text, or phrases, at the
+                descretion of the linguist. The main division of a
+                text.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>element</glossterm>
+            <glossdef><para>Words in a text; can be subdivided into
+                subelements, like morphemes or phonemes. Technically,
+                elements are the subdivision of streams and of
+                themselves.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>tag</glossterm>
+            <glossdef><para>A bit of information that's 'tagged' onto
+                a text, a stream, an element or a lexeme. Tags can be
+              either a short free-format text, a longer free-format
+                text, an entry out of a predefined list or an entry
+                out of the list of references. For instance, a word in
+                a sentence can be tagged with the grammatical role of
+                subject.</para>
+            </glossdef>
+          </glossentry>
+
+          <glossentry>
+            <glossterm>parse set</glossterm>
+            <glossdef><para>Currently de-implemented because of a
+                pending redesign (that is, they have been removed for
+                the current version of Kura, 2.0), parse sets are
+                groupings of elements in a text.</para>
+            </glossdef>
+          </glossentry>
+
+        </glosslist>
+    </section>
+      
+    <section><title>Relational database</title>
+
+      <para>Kura uses a relational database model to store the
+        linguistic data. Even the file-based datastores mimic a
+        relational database and actually use the same datamodel as the
+        database backend.</para>
+
+      <para>I've not yet succeeded in making this completely
+        transparent to users, so I'd like to appeal to their
+        intelligence and keep the following in mind:</para>
+
+      <itemizedlist>
+        <listitem><para>all data is stored in tables - long lists of
+            records. A record is a set of related data.</para>
+        </listitem>
+        <listitem><para>tables are related through the use of keys.
+            For instance, every text is numbered (in the field
+            'textnr'), and Kura knows which sentence belongs to which
+            text because every 'stream' stores the textnr, too. This
+            is a parent (the text) - child (the sentence)
+            relation.</para>
+        </listitem>
+        <listitem><para>You should not try to remove a text without
+            removing the streams, for instance, because then the
+            streams wouldn't belong to any known text. If you remove a
+            text, all the underlying data will be automatically
+            removed, too.</para>
+        </listitem>
+        <listitem><para>Installing and administering a database is a
+            bit of a bother. It's not for nothing that dba's (database
+            administrators) earn quite well. However, one Kura
+            database is quite enough for a group of linguistis working
+            on related languages. And if you cannot administer a
+            database, you can always use the file based datastore.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section><title>Unicode</title>
+
+      <para>Kura supports Unicode throughout. You can use your OS's
+        input methods (kcharselect, XIM or keyboard layouts) to enter
+        data in non-latin scripts.</para>
+
+      <para>Five minutes of work on the web with a search engine will
+        find you many Unicode fonts. I am particularly satisfied with
+        Microsoft's Arial Unicode and the Gnu Unicode font. Both cover
+        a large range of characters, but Arial Unicode will show
+        combining characters (for instance a vowel and a diacritic
+        mark) better. For presentation purposes that use the western
+        script and IPA, the Thryomanes font might be a better
+        choice.</para>
+
+      <para>When using combining characters, type the base character
+        first, and the diacritic second.</para>
+    </section>
+  </chapter>
+
+  <part id="part1">
+    <title>Installation and Configuration</title>
+
+    <partintro>
+      <para>Kura is a serious application. That means that installing
+        Kura will take some effort. First of all, the PyQt GUI library
+        is not available by default on all Unix systems. It is not
+        very difficult to install, but you are urged to closely follow
+        the installation instructions.</para>
+
+      <para>If you are wondering <emphasis>why</emphasis> I am using
+      PyQt instead of GUI library like Tkinter, which is available
+      almost everywhere where Python is available, the answer is as
+      follows:</para>
+
+      <para>First, Tkinter did not offer the advanced widgets, such as
+        the table widget, that Kura needs when I started coding Kura.
+        Secondly, and more importantly, only PyQt has support for
+        Unicode through and through. If I had stuck with Tkinter or
+        wxWindows you wouldn't have been able to use IPA in your
+        data.</para>
+
+      <para>So, bite the bullet, and install PyQt. Once that's done,
+      you've had the worst, I promise.</para>
+
+    </partintro>
+
+    <chapter><title>Installation</title>
+
+      <para>Two versions of Kura are made available: an rpm package
+        for rpm-based Unix systems and a source distribution.</para>
+
+      <para>Installing the rpm is as simple as executing:</para>
+
+      <screen>
+&gt; rpm --install kura*.rpm
+      </screen>
+
+      <para>The source distribution needs to be unpacked, after which
+        you can run:</para>
+
+      <screen>
+&gt; python setup.py install
+      </screen>
+
+
+      <para>Please note that Kura by default installs with the
+        <filename>/usr/local</filename> prefix. If you want to install
+        Kura to a different location, you will need to edit the
+        <filename>setup.cfg</filename> file and the
+        <filename>kura</filename> script to reflect your preferred
+        location.</para>
+
+      <para></para>
+    </chapter>
+
+    <chapter id="mysqlconfig"><title>Database Configuration</title>
+
+      <para>Out of the box Kura will use the file-based datastore.
+        This is not multi-user and cannot be used as a central
+        network-accessible database.</para>
+
+      <para>If you want to share your Kura data with other linguists,
+        you need to install the MySQL database. Please consult the
+        MySQL manual about installing MySQL.</para>
+
+      <para>When MySQL is installed, you have created a new database,
+        you must run the <filename>config.sql</filename> script from
+        the datamodel subdirectory:</para>
+
+      <screen>
+&gt; mysql mydatabase &lt; config.sql
+      </screen>
+
+      <para>Previous versions of Kura used a slightly different
+        datamodel, which is incompatible with the current datamodel.
+        If you need to migrate data, please contact me
+        (<email>boud@valdyas.org</email>), and I will try to help
+        you.</para>
+
+    </chapter>
+
+    <chapter><title>Settings and configuration options</title>
+
+      <para>Kura comes with a default configuration consisting of a
+        number of pre-defined tags that are useful for tagging texts
+        and lexical items, a number of sample texts and so on.
+        Configuring Kura for a particular situation demands some care
+        however - most aspects of Kura are configurable. See the notes
+        to the individual menu options.</para>
+    </chapter>
+
+  </part>
+
+  <part id="part2">
+    <title>Tutorial</title>
+
+    <partintro>
+      <para>You can start Kura by executing the command
+        <command>kura</command> from the command line:</para>
+
+      <screen>
+        &gt; kura
+      </screen>
+
+      <para>After a while the splash screen will show:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-splash">
+        </imageobject>
+        <caption>
+          <para>Kura starts</para>
+        </caption>
+      </mediaobject>
+
+      <para>Just before you have managed to recognize all the various
+        scripts in this logo, Kura itself appears. If this is the
+        first time you've run Kura, Kura will open with a completely
+        empty database. This is generally not what you want; you want
+        to start with a database that contains at least the default
+        configuration data.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-empty">
+        </imageobject>
+        <caption>
+          <para>Virgin Kura</para>
+        </caption>
+      </mediaobject>
+
+      <para>If you are using the <link linkend="mysqlconfig">MySQL
+          database backend</link>, you must have configured the
+        database and started the server by now.</para>
+
+      <para>If you want to use the file-based backend, this is the
+        moment to create a new datastore file that will contain the
+        basic configuration data. Choose
+        <keycombo><keysym>CTRL-N</keysym></keycombo>
+        or <guimenuitem>New</guimenuitem> from
+        the <guimenu>File</guimenu> menu. Choose a filename, with the
+        obligatory extension <filename>.dbobj</filename> (this
+        extension is not automatically added if you forget it.):</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-new-datastore">
+        </imageobject>
+        <caption>
+          <para>New file dialog</para>
+        </caption>
+      </mediaobject>
+
+
+      <note><title>Templates</title>
+        <para>Kura uses a template file to determine the default
+          configuration. If you want to use a custom template, first
+          create a new datastore, enter the extra configuration details
+          you need, and then save the datastore file and copy it to
+          the Kura installation directory (most likely
+          <filename>/usr/local/share/kura</filename>) under the name
+          template.dbobj.</para>
+
+        <para>In a future version of Kura, it will be possible to
+          choose from different templates.</para>
+      </note>
+
+      <para>If you want to connect to a database, use
+        <guimenuitem>Connect</guimenuitem> from the
+        <guimenu>File</guimenu> to open the connect dialog:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-connect">
+        </imageobject>
+        <caption>
+          <para>Connect to database</para>
+        </caption>
+      </mediaobject>
+
+      <para>You will now have access to a
+      working datastore or datastore. The statusbar is updated
+      accordingly, and if you choose <guimenu>Configuration</guimenu>
+        <guimenuitem>Tags</guimenuitem> you will see that the empty
+        screen is filled with data:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-tags-window">
+        </imageobject>
+        <caption>
+          <para>A screenful of data.</para>
+        </caption>
+      </mediaobject>
+
+      <para>If you've made it to this point, you're ready to start
+        exploring Kura in earnest. If you mess up, you can always
+        create a new datastore. So feel free to explore a bit before
+        coming back for the rest of the tutorial.</para>
+        
+    </partintro>
+
+    <chapter><title>Begin</title>
+
+      <para>Begin with reviewing the default configuration. Perhaps
+        you need to add new tag definitions to Kura to suit your
+        research. Do not, however, <emphasis>remove</emphasis> default
+        tags from the datastore. Kura uses the values of some of these
+        tags, especially <command>GLOSS</command> to construct
+        interlinear text.</para>
+
+
+      <para>If you are puzzled by the relations between the
+        configuration details and the contents of these tables, please
+        review the chapter <link
+        linkend="configuration">Configuration</link>.</para>
+
+
+      <para>For now, choose from the <guimenu>Administration</guimenu>
+        menu the entry <guimenuitem>User</guimenuitem>. This is an
+        empty table. Kura k track of which user is responsible for
+        which linguistic fact, and before you can start entering data,
+        you have to create a user for yourself, and for every other 
+        linguist who will be using this Kura database or datastore.
+      </para>
+
+      <para>Choose <guimenu>Edit</guimenu><guimenuitem>New
+          Item</guimenuitem>, or press the New Item toolbar button (a
+        sheet of paper with a yellow star on it), or press
+        <keysym>CTRL-ALT-N</keysym> or <keysym>INS</keysym> to open
+        the <command>New User</command> dialog window:</para>
+
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-user">
+        </imageobject>
+        <caption>
+          <para>Create a new user</para>
+        </caption>
+      </mediaobject>
+
+      <para>Enter the relavant data in the fields, and press OK. The
+        Affiliation Code dropdown list is empty, because we haven't
+        filled any data in the affiliation table. If you wish, you can
+        do that, and then add your academic affiliation to your user
+        data.</para>
+
+      <para>Next, define a project. Kura is organized in projects. A
+        project can be fieldwork on a certain language for a Phd, or
+        work for a particular paper. Choose
+        <guimenu>Adminstration</guimenu><guimenuitem>Project</guimenuitem> 
+        to open the projects table. Again, press INS to create a new
+        project:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-project">
+        </imageobject>
+        <caption>
+          <para>Create a new project</para>
+        </caption>
+      </mediaobject>        
+
+      <para>The information you enter here is rather freeform. The URL
+        can point to the project website, and you can add any grants
+        you've received, too. The summary can appear on automatically
+        generated documents.</para>
+
+
+      <para>Now that we have a user and a project, it's time to make
+      sure that Kura knows about the language we are working with.
+      Open
+      <guimenu>Administration</guimenu><guimenuitem>Language</guimenuitem>
+      and press INS to enter a new language:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-language">
+        </imageobject>
+        <caption>
+          <para>Create a new language</para>
+        </caption>
+      </mediaobject>        
+
+      <para>The language dialog has the option to define a parent
+        language. If you enter more than one language in Kura, you can
+        create language trees. In the dictionary module, you can use
+        this to request Kura to search for related words in related
+        languages.</para>
+
+      <para>When this data is entered, we are ready to create the
+        lexicon and the database of analyzed texts.</para>
+
+    </chapter>
+
+    <chapter id="tutoriallexeme"><title>Entering Lexical Data</title>
+
+      <para>Let's start with entering a few words. Open the
+        <guimenu>Documents</guimenu> menu, choose
+        <guimenuitem>Lexicon</guimenuitem> menuitem. You will see an
+        empty screen. By now you know what to do to enter a new
+        record: press INS. The New Lexemes dialog window will open.
+        The text, stream and element dialogs look a lot like this one.
+        First one tab, with basic data, then a tab with tags and
+        finally one or more tab pages with specific data.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-lexeme-1">
+        </imageobject>
+        <caption>
+          <para>Create a new lexeme</para>
+        </caption>
+      </mediaobject>        
+
+      <para>The first tab presents the basic lexical data: the
+        attested <emphasis>form</emphasis>, the basic
+        <emphasis>glosse</emphasis>, a longer description, the
+        <emphasis>phonetic form</emphasis>, an eventual
+        <emphasis>alternative form</emphasis>, the language this
+        lexeme comes from, and a checkbox that indicates whether you
+        are done with this lexeme.</para>
+
+      <para>The alternative form is especially useful if your language
+        has spelling variants or if you are converting from one
+        transcription system to another, and want to be able to query
+        on the old transcription.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-lexeme-2">
+        </imageobject>
+        <caption>
+          <para>A lexeme</para>
+        </caption>
+      </mediaobject>        
+
+
+      <para>Enter some likely data, if you would. You can copy and
+        paste Unicode characters from a utility like KCharSelect, by
+        either with your middle mousebutton, or with CTRL-V.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-kcharselect">
+        </imageobject>
+        <caption>
+          <para>KCharSelect</para>
+        </caption>
+      </mediaobject>        
+
+      <para>The second tab, Tags, allows you to add extended data to
+      the lexeme you've just entered. The top half is occupied by a
+      list of all tags that have already been added; when you click on
+      the <command>Add</command> button, a new tag record will be
+      created which you can edit in the bottom half.</para>
+
+      <para>If you want to change a tag, click on the tag in the list,
+      and it will be opened, too.</para>
+
+      <para>You can save your changes by pressing
+      <command>Save</command>.</para>
+
+      <para>The delete button, finally, deletes. That's no
+      surprise.</para>
+
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-lexeme-3">
+        </imageobject>
+        <caption>
+          <para>Adding a tag</para>
+        </caption>
+      </mediaobject>        
+
+      <para>Let's tell Kura the Part of Speech of the lexeme we just
+        entered. As you can see, Part of Speech is one of the many
+        possible tags that have already been defined in the
+        configuration tables. If you select it from the combobox
+        labeled Tag, the combobox labeled Value will be filled with
+        all the possible parts of speech, that also have been entered
+        in the configuration tables.</para>
+
+      <para>You can always add a comment to a tag, too, in the
+        description field.</para>
+
+      <para>If you choose a tag that allows you to enter a short
+        value, such as a glosse, the drop-down list can contain all
+        the values you've entered before. This, however, makes filling
+        the list slow, and is therefore a Preferences option.
+        (<guimenu>File</guimenu>/<guimenuitem>Preferences</guimenuitem>/Show 
+        existing values for tags).</para>
+
+      <para>A minor inconvenience is that you have to press Apply
+        before adding tags.</para>
+        
+      <para>The final tab in the Lexeme dialog is Relations. Here, you
+        can create relations between the lexemes in your lexicon.
+        Let's enter two more words, and create a relation between
+        those.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-lexeme-5">
+        </imageobject>
+        <caption>
+          <para>Related lexemes.</para>
+        </caption>
+      </mediaobject>        
+      
+      <para>In the filter section of the dialog you can enter search
+        criteria for lexemes. You can use % wildcard to match anything,
+        as is done here. When you press Apply Filter, the listbox with
+        possible lexemes is filled.</para>
+
+      <para>You can then select a Default Relation: in this case,
+        Kharamadarya compound. You can add new relations when you
+        configure Kura.</para>
+
+      <para>When you double click on an entry in either listbox, the
+        entry is moved to the other side. Here, I've selected the
+        lexemes 'sumir', meaning wine, and 'sumiran', meaning drinker,
+        that form the components of the Kharamadarya compound
+        'sumirsumiran', 'wine-bibber'.</para>
+
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-lexeme-4">
+        </imageobject>
+        <caption>
+          <para>Creating a relation.</para>
+        </caption>
+      </mediaobject>        
+      
+      <para>From the lexeme view (and references and scans), you can
+        drag and drop a docbook-tagged reference to an editor.</para>
+
+    </chapter>
+
+
+    <chapter id="newtextwizard"><title>Glossing a Text</title>
+
+      <para>Having entered lexemes is helpful when glossing a text,
+      and, vice versa, glossing a text results in new lexemes. In this
+      chapter we will use the New Text Wizard to enter and gloss a new
+      text. If you choose
+      <guimenu>Documents</guimenu>/<guimenuitem>Text</guimenuitem>,
+      you will see the following screen, one of the more complex in Kura:</para>
+
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-text">
+        </imageobject>
+        <caption>
+          <para>Texts in Kura.</para>
+        </caption>
+      </mediaobject>        
+
+      <para>The texts window is divided in two parts: on the left,
+        there is a tree of languages and texts. On the right, there is
+        a pane that shows the selected text interlinearly
+        glossed.</para>
+
+      <para>Texts generally have a source in fieldwork or in a
+        manuscript. Kura offers facilities to record those sources and
+        link the source to the text, and present the source in
+        generated documents. In this case, the source is a recording
+        (enter it in
+        <guimenu>Documents</guimenu>/<guimenuitem>Recording</guimenuitem>:</para>
+
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-recording1">
+        </imageobject>
+        <caption>
+          <para>A tape recording.</para>
+        </caption>
+      </mediaobject>        
+
+      <para>Choose <guimenu>Edit</guimenu>/<guimenuitem>New
+          Item</guimenuitem> (or press INS) to start the New Text
+        Wizard, and fill in the blanks:</para>
+
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-new-text1">
+        </imageobject>
+        <caption>
+          <para>First page of the New Text wizard.</para>
+        </caption>
+      </mediaobject>        
+      
+      <para>The next window lets you determine the basic parameters
+        used to parse the new text. Kura 2.0 can split plain text in
+        words and sentences using common punctuation. The <link
+        linkend="importtext">text import script</link> can import
+        ready-interlinearized text marked up in XML, but this dialog 
+        cannot handle that yet. I intend to create a mechanism where
+        you can plug-in real parsers (probably stemmers and so on) for
+        particular languages, but that's pie-in-the-sky at the
+        moment.</para>
+
+      <para>You can also let Kura lookup glosses for words in the
+        lexicon or in other texts. This is not quite foolproof,
+        obviously, but it might give you a head-start.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-new-text2">
+        </imageobject>
+        <caption>
+          <para>Parser parameters.</para>
+        </caption>
+      </mediaobject>        
+        
+       <para>The third page of the new text wizard shows an editor
+        where you can either type your text, or load the text from a
+        file. The encoding of that file <emphasis>must</emphasis> be
+        utf-8. Use an utf-8 capable editor, such as <ulink
+        url="http://kate.kde.org">Kate</ulink> to create those texts.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-new-text3">
+        </imageobject>
+        <caption>
+          <para>A very short text.</para>
+        </caption>
+      </mediaobject>        
+ 
+      <para>If you press Next, the text will be parsed and shown in a
+      tree:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-new-text4">
+        </imageobject>
+        <caption>
+          <para>A parse tree.</para>
+        </caption>
+      </mediaobject>        
+      
+      <para>If you think the result is wrong, you can go back and
+        fiddle with the regular expressions to get the right
+        result. If the result is right, press next to pick the projects
+        this text is associated with:</para>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-new-text5">
+        </imageobject>
+          <caption>
+          <para>Picking the project.</para>
+        </caption>
+      </mediaobject>        
+      
+      <para>And that was the last step before the finish:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-new-text6">
+        </imageobject>
+      </mediaobject>        
+
+      <para>If you select the new text in the text tree, you will see
+      the interlinear text you've just created, with some glosses
+      already:</para>
+
+      
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-interlinear-1">
+        </imageobject>
+          <caption>
+          <para>An interlinearly glossed text.</para>
+        </caption>
+      </mediaobject>        
+
+      <para>Working with interlinear texts is quite simple and
+        intuitive. The currently selected element is enclosed in a
+        gray box. The cursor keys move the selection. When you move
+        the cursor, the text in the edit box in the interlinear
+        toolbar is updated. If you press enter or click in the edit
+        field or click on the edit button, the edit field get focus
+        and you can change the contents. If you then press the button
+        with the green OK sign, or if you press Enter, the
+        element will be updated.</para>
+
+      <para>Double clicking on an element opens a dialog window where
+        you can enter more detailed data. For instance, if you click
+        on the title of the text, the dialog window that allows you
+        to annotate the text appears:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-interlinear-2">
+        </imageobject>
+          <caption>
+          <para>Text dialog.</para>
+        </caption>
+      </mediaobject>
+
+      <para>Here, you can add text-specific tags, or review the
+        associations of the text with the projects. Below the title,
+        there's an element that represents the description you entered
+        in the text dialog. Clicking on this, too, opens the text
+        dialog.</para>
+
+      <para>The phrases, or <link linkend="streamdefined">streams
+        </link> in Kura terminology are neatly numbered. Base-zero,
+        I'm afraid. I only noticed just now... Put it down to job
+        deformation. Anyway, clicking on this number opens the dialog
+        window that allows you to enter all kinds of interesting
+        information related to streams:</para>
+
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-interlinear-3">
+        </imageobject>
+          <caption>
+          <para>Stream dialog.</para>
+        </caption>
+      </mediaobject>
+
+
+      <para>The words that make up a stream are one element, together
+        with their glosse. Actually, the gloss is a tag record
+        associated with the element, but that's not that important. If
+        you use the edit field above the interlinear display to edit
+        the word and its gloss, you need to be aware that Kura splits
+        at the first space: the text up to the first space is the form
+        of the word, everything after that is considered a
+        glosse.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" 
+                     fileref="screenshots/kura-interlinear-4">
+        </imageobject>
+          <caption>
+          <para>Using the edit field of the interlinear text editor.</para>
+        </caption>
+      </mediaobject>
+
+      <para>Let's use the edit field to gloss the word
+        <emphasis>ray</emphasis> in the second stream (the one with
+        number one). Go there with the cursor, or click on that word.
+        Press enter. You see that the word <emphasis>ray</emphasis> is
+        glossed with a hash sign (or pound sign, your preference).
+        Replace the hash sign with the glosse 'good'. Press Enter. You
+        see that the gloss in the interlinear text has been changed to
+        'good'. Now double-click on that element. You get the
+        following dialog window:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" 
+                     fileref="screenshots/kura-interlinear-5">
+        </imageobject>
+          <caption>
+          <para>Element dialog.</para>
+        </caption>
+      </mediaobject>
+
+      <para>If you now go to the Tags tab, you see that the Glosse tag
+      has been entered:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-interlinear-6">
+        </imageobject>
+          <caption>
+          <para>Element dialog.</para>
+        </caption>
+      </mediaobject>
+
+      <para>It's easy to create a lexeme from an element in a text;
+        it's just as easy to associate an existing lexeme with an
+        element in a text. Go to the Related Lexeme tab. It's empty
+        now, but if you press the Add to lexicon button, Kura asks you
+        whether you really want to add this word to the lexicon. And
+        if you say yes, it's done:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" fileref="screenshots/kura-interlinear-7">
+        </imageobject>
+          <caption>
+          <para>Adding a lexeme to the dictionary.</para>
+        </caption>
+      </mediaobject>
+
+      <para>If you press Edit lexeme, an entirely familiar dialog pops
+        up, namely, the Edit Lexical Item dialog we've seen
+        before.</para>
+
+      <para>Press OK, and now double-click on the element
+        <emphasis>esumire</emphasis>. We're going to associate this
+        element with a lexeme, and then split the element into its
+        component morphemes. First go to the Related Lexeme tab again.
+        Press Select Lexeme. A dialog that looks a lot like the one we
+        used to relate lexemes to each other pops up, with some data
+        already filled in:</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center" 
+                     fileref="screenshots/kura-interlinear-8">
+        </imageobject>
+          <caption>
+          <para>Picking a lexeme from the dictionary.</para>
+        </caption>
+      </mediaobject>
+
+
+      <para>Remove the final 'e' from the Form (that's the perfective
+        suffix), and press Apply Filter. The Lexemes list is now
+        filled with lexemes that conform to the search requirements.
+        Select one. (In this case, there's only one,
+        obviously.)</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-interlinear-9">
+        </imageobject>
+          <caption>
+          <para>A lexeme from the dictionary has been associated with
+          this element.</para>
+        </caption>
+      </mediaobject>        
+
+      <para>If you press OK after selecting a lexeme, the link has
+        been made. What about the lexemes Kura already glossed for us?
+        Are they linked to the relevant lexemes, too? The answer is,
+        alas, not really. When glossing a text, for every element in a
+        stream that is not associacated with a glosse or a lexeme,
+        Kura looks in the lexicon of that language for any forms that
+        are exactly the same as the form of the element, and picks
+        one. It could be entirely wrong, but that's not likely in our
+        test database. But the process is not nearly accurate enough
+        to allow it to chisel the results in stone. 
+
+      <para>The form <emphasis>esumire</emphasis> is complex, and
+        consists of a root and a suffix. Let's use the Morphemes tab
+        to enter that data.</para>
+
+      <para>You separate the morphemes in a word with a dot, select
+        the type of sub-elements you want to create (most like
+        morpheme), and then press Create Morphemes. Now kura will fill
+        the tree in the bottom half of the dialog window with the
+        created morphemes.</para>
+      
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-interlinear-10">
+        </imageobject>
+          <caption>
+          <para>A word split into two morphemes.</para>
+        </caption>
+      </mediaobject>        
+
+      <para>Double-clicking on a morpheme will open a new dialog,
+        similiar to the Edit Element, but titled Edit Morpheme. Now
+        you can repeat the preceeding steps at libitum: add tags,
+        associate with lexemes or split the morpheme into
+        phonemes.</para>
+
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-interlinear-11">
+        </imageobject>
+          <caption>
+          <para>Editing a morpheme.</para>
+        </caption>
+      </mediaobject>        
+
+      <para>Now use Add Lexeme to add the root of
+        <emphasis>Esame</emphasis>, which is <emphasis>esam</emphasis>
+        to the lexicon with the glosse 'to say', and the particle
+        <emphasis>ga</emphasis> with the glosse 'TOPIC', and the
+        relevant abbrevation and part-of-speech particle. (In order to
+        be able to tag the abbreviation TOP to
+        <emphasis>ga</emphasis>, you need to add it to the list of tag
+        domains.)</para> 
+
+
+      <para>Finally, we're going to add translation tags to the two
+        streams. Simply click on the fields that say
+        <emphasis>TR:None</emphasis>, and enter for the first line
+        'The drink drank the wine' and for the second line, 'He said,
+        this wine, it's good'.</para>
+
+      <para>Now you should have a neatly glossed text (if some 
+        glosses don't appear, click on the text again, there might
+        still be a few bugs left in the redisplay code).</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-interlinear-12">
+        </imageobject>
+          <caption>
+          <para>Finished glossing a text.</para>
+        </caption>
+      </mediaobject>        
+
+      
+    </chapter>
+
+    <chapter><title>Creating a document.</title>
+
+      <para>The goal of the whole exercise is, of course, to create
+        publications of the analyzed data. In this part of the
+        tutorial we will create a documentat that contains an
+        interlinearized text that can be published to html or
+        PDF.</para>
+
+      <para>Open the Text view and select our text. Then choose
+        <guimenu>File</guimenu>/<guimenuitem>Export As</guimenuitem>.
+        A file dialog opens. You can see from the list of supported
+        filetypes that Kura can export data in sgml, xml and dbx
+        format. Those formats are all docbook: if you want the data in
+        another format, you should consult <link
+        linkend="scripting">the chapter on hacking Kura</link>.</para>
+
+      <para>Type a filename, say, <filename>sumir.sgml</filename>, and
+      press Enter.</para>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-export1">
+        </imageobject>
+          <caption>
+          <para>Exporting a text.</para>
+        </caption>
+      </mediaobject>        
+
+      <para>Now Kura has created an sgml docbook fragment that
+        contains your text. The interlinear format is simple: just
+        lines spaced out with spaces in a &lt;programlist&gt;
+        docbook tag.</para>
+
+      <para>You can insert this fragment in any docbook document and
+      then use your operating system tools, like OpenJade to generate
+      documents.</para>
+
+      <screen>
+db2pdf sumir.sgml
+      </screen>
+
+
+      <para>And the result will be:</para>
+      <programlisting>
+      &lt;section&gt;&lt;title&gt;Denden&lt;/title&gt;
+        &lt;section id="text_1"&gt;&lt;title&gt;Sumir&lt;/title&gt;
+          &lt;informaltable frame="none" colsep="0" rowsep="0"&gt;&lt;tgroup cols="2"&gt;&lt;tbody&gt;
+                &lt;row&gt;
+                  &lt;entry&gt;&lt;emphasis role="strong"&gt;Recording&lt;/emphasis&gt;&lt;/entry&gt;
+                  &lt;entry&gt;&lt;link linkend="recording_1"&gt;sumir&lt;/link&gt;&lt;/entry&gt;
+                &lt;/row&gt;
+              &lt;/tbody&gt;&lt;/tgroup&gt;&lt;/informaltable&gt;
+          &lt;para&gt;A remark about wine.&lt;/para&gt;
+          &lt;para id="stream_1"&gt;
+            &lt;programlisting&gt;Sumiran sumir esumire 
+drinker wine  drink   &lt;/programlisting&gt;
+The drinker drank the wine.
+          &lt;/para&gt;
+          &lt;para id="stream_2"&gt;
+            &lt;programlisting&gt;Esame sumir ga  ray  
+say   wine  TOP good &lt;/programlisting&gt;
+He said, this wine, it's good.
+          &lt;/para&gt;
+        &lt;/section&gt;
+      &lt;/section&gt;
+      </programlisting>
+      <para>You can do the same with the lexicon. More complex
+        formatting or inclusion of texts and lexical items in grammars
+        or articles is offered by the grammar template project, which
+        is a combination of scripts that handle the Kura database and
+        docbook sources. Notice that handling unicode characters out
+        of the box (like the IPA we used) <ulink
+        url="http:/www.valdyas.org/linguistics/printing_unicode.html">
+        is not OpenJade's forte</ulink>. Generating to html is no
+        problem, and the grammar project uses Fop to create unicode 
+        documents.</para>
+
+      <para>You can read all about docbook at: <ulink
+      url="http://www.docbook.org">docbook.org</ulink>, where you
+      can also find a complete book on docbook.</para>
+
+    </chapter>
+
+  </part>
+
+  <part id="part3">
+    <title>Functionality</title>
+
+    <partintro>
+      <para>The functionality of the Kura gui client is divided over
+        several menus. This part discusses the contents of those
+        menus.</para>
+    </partintro>
+
+    <chapter><title>Toolbar</title>
+
+      <mediaobject><imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/toolbar">
+        </imageobject>
+      </mediaobject>
+      <para>Kura currently sports a very simple toolbar. From left to
+        right, the buttons represent: New Datastore, Open Datastore,
+        Save Datastore, Save Datastore As, Export, New Item, Find
+        Item, Edit Item, Delete Item.</para>
+
+      <para>The Current Language Combobox is used to quickly set the
+        language the user is currently working with. This value is
+        used in searches, if the <link linkend="preferences">Use
+          Default Values in Search</link> preference is set.</para>
+
+      <para>Note that there are currently unresolved issues with this
+        feature: selecting a new language after changing between
+        datastores or between datastores and databases causes Kura to
+        crash.</para>
+
+      <para>The final button can be used to quit Kura.</para>
+
+    </chapter>
+    
+
+
+    <chapter>
+
+      <title>File Menu</title>
+      <para>The contents of the File Menu are related to accessing
+        databases or datastore files, creating external files, opening
+        new windows and setting the preferences that are stored in the
+        <filename>$HOME/.qt/kurarc</filename> file.</para>
+
+      <section><title>New Window</title>
+        <para>Opens a new Kura window on the <emphasis>same</emphasis>
+        database or datastore file as the first window. That way, you
+        can compare different queries or add, say, recordings in one
+        window while adding texts in another.</para>
+      </section>
+
+      <section><title>New</title>
+
+        <mediaobject>
+        <imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/folder_new">
+        </imageobject>
+        </mediaobject>
+   
+
+        <para>Shortcut:<keysym>CTRL-N</keysym>. Creates a new
+        datastore file. Datastore files should have the extension
+        <filename>.dbobj</filename> and are created based on the
+        template file in
+        <filename>/usr/local/share/kura/template.dbobj</filename>.</para>
+      </section>
+
+      <section><title>Open</title>
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/project_open">
+        </imageobject>
+        </mediaobject>
+
+        <para>Shortcut:<keysym>CTRL-O</keysym>. Opens an existing
+          datastore file. The file should have the extension
+          <filename>.dbobj</filename>. Kura remembers the last opened
+          datastore file and will open that file automatically when
+          starting the GUI client. It is not (yet) possible to start
+          kura with a filename as a command-line argument.</para>
+        
+        <para>Please be aware that file-based backed is strictly
+          single user, while the the MySQl database backend is
+          multi-user. If more than one instance of Kura accesses a
+          file, it <emphasis>will</emphasis> be corruped. I have
+          <emphasis>not</emphasis> implemented a locking mechanism. If
+          you want it, use the database.</para>
+
+      </section>
+
+      <section><title>Save</title>
+
+        <mediaobject><imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/filesave">
+        </imageobject>
+        </mediaobject>
+
+        
+        <para>Shortcut:<keysym>CTRL-O</keysym>. Saves the currently
+        open datastore file.</para>
+
+      </section>
+
+      <section><title>Save As</title>
+
+        <mediaobject><imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/filesaveas">
+        </imageobject>
+        </mediaobject>
+
+
+        <para>Saves the currently open datastore in a new file with a
+        new name. Closes the currently open datastore file and makes
+        the new file the default.</para>
+
+      </section>
+
+
+      <section><title>Export As</title>
+
+        <mediaobject><imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/fileexport">
+        </imageobject>
+        </mediaobject>
+
+
+        <para>Saves the currently active text, or the current selected
+        set of lexemes, recordings, scans or bibliographic references
+        in docbook sgml or docbook xml format.</para>
+
+      </section>
+
+      <section><title>Connect</title>
+
+        <mediaobject><imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/connect_creating">
+        </imageobject>
+        </mediaobject>
+
+        <para>Connects to a MySQL database. If a datastore file is
+        open, it is saved and closed. The connection to the database
+        is made the default and will be restored the next time Kura is
+        started. Please be aware that the MySQl database backend is
+        multi-user, while the file-based backed is strictly single
+        user. If more than one instance of Kura accesses a file, it
+        <emphasis>will</emphasis> be corruped. I have
+        <emphasis>not</emphasis> implemented a locking mechanism. If
+        you want it, use the database.</para>
+      </section>
+
+      <section id="preferences"><title>Preferences</title>
+
+        <para>Opens the preferences dialog window:</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-preferences">
+          </imageobject>
+          <caption>
+            <para>Preferences dialog.</para>
+          </caption>
+        </mediaobject>        
+
+        <para>The User combobox sets the default user. This is the
+          username that Kura will use to tag new and changed records
+          with. In a multi-user situation, this will enable a form of
+          academic accountability by making clear which linguists did
+          what.</para>
+
+        <para>The default language is the language the user works most
+          with. If the checkbox Use Default Values in Searches is
+          checked, this will be used to, for instance, filter the
+          results of a query on the lexicon.</para>
+
+        <para>The default project is the current project the user
+          works with. When creating new items or querying, this value
+          can be taken into account, just like language or
+          user.</para>
+
+        <para>The checkbox Use Default Values in Searches controls
+          Kura's query behaviour. If it is checked, Kura will
+          pre-filter the results of queries on tables, restricting the
+          results to those that have the user, language and project
+          chosen above.</para>
+
+        <para>Show Existing Values in Tags tells you also that it
+          might be slow. That is true. The case is that for some tags,
+          such as glosse in element tags, you enter short texts. These
+          texts might reoccur often, so if you check this, you can
+          choose from the values you entered before.</para>
+
+        <para>The interlinear text font is the font used to create the
+        text in the interlinear text editor.</para>
+
+        <para>The application font is the font Kura uses for all the
+          other texts it shows, in menu's, on buttons and in edit
+          fields.</para>
+
+        <para>Finally you have the choice between two options related
+          to the generation of sgml export files of texts. You can
+          either choose to generate the interlinear lines aligned with
+          spaces in a preformatted block, or to generate the
+          interlinear lines in the form of Docbook tables. Both are
+          not very satisfactory, I'm afraid. You can always write your
+          own TeX output with the one of the classes LaTeX offers for
+          interlinear examples.</para>
+
+      </section>
+
+
+      <section><title>Exit</title>
+
+        <mediaobject><imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/fileclose">
+        </imageobject>
+        </mediaobject>
+
+        <para>Closes all open windows and exits Kura completely. If
+        you've changed records in the datastore file, Kura will ask
+        you whether you want to save the changes. Be aware that if you
+        use the MySQL backend all your changes are made immediately,
+        and are undoable.</para>
+      </section>
+
+    </chapter>
+
+    <chapter><title>Edit Menu</title>
+      <para>The Edit menu concerns itself with the handling of
+      individual records in the Kura tables.</para>
+
+
+      <section><title>New Item</title>
+
+        <mediaobject><imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/filenew">
+        </imageobject>
+        </mediaobject>
+
+        <para>Shortcut: <keysym>CTRL-ALT-N</keysym>,
+          <keysym>INS</keysym>. New Item is used to create a new entry
+          in the currently active table. If you are currently editing
+          texts, it will start the <link linkend="newtextwizard">New
+            Text Wizard</link></para>
+
+      </section>
+
+      <section><title>Find</title>
+        <mediaobject><imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/filefind">
+        </imageobject>
+        </mediaobject>
+
+        <para>Shortcut: <keysym>CTRL-F</keysym>, <keysym>F2</keysym>.
+          The Find option opens a dialog window you can use to
+          retrieve a filtered set of data in the database or the2
+          datastore.</para>
+
+        <para>If you have selected Use Default Values in searches in
+          the <link linkend="preferences">Preferences</link> dialog
+          you current project, language and user will already be
+          filled in.</para>
+
+        <para>You can search for part of a word using the % wildcard.
+          For instance, '%are' in glosse matches all lexemes where the
+          glosse ends in 'are', 'a%' matches all lexemes where the
+          glosse starts with an <emphasis>a</emphasis>, and 'a%a'
+          matches all lexemes where the glosse starts and ends with an
+          a. It is possible that the way the match is made differs
+          subtly between the database and the text backend.</para>
+
+      </section>
+
+
+      <section><title>Open Item</title>
+        <mediaobject><imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/edit">
+        </imageobject>
+        </mediaobject>
+
+        <para>Shortcut: <keysym>CTRL-ALT-O</keysym>,
+          <keysym>Enter</keysym>  This action opens the currently
+          selected line (or record) in a dialog box, and allows you to
+          change data.</para>
+      </section>
+
+
+      <section><title>Delete</title>
+        <mediaobject>
+        <imageobject>
+          <imagedata scale="100" align="center"
+                     fileref="screenshots/editdelete">
+        </imageobject>
+        </mediaobject>
+
+
+        <para>Shortcut: <keysym>DEL</keysym>. The delete action
+          removes an item irretrievably from the database.</para>
+
+        <para>If there are records dependend upon this item, Kura will
+          ask you whether it should remove those, too. If you say yes,
+          that means that, removing a lexical item that has been
+          associated with an element in a text, will also remove that
+          element from the text, and all associated data. I probably
+          won't have to point out the danger of this operation to
+          you.</para>
+
+        <para>If you use the database backend, the action is carried
+          out immediately, if you use the file datastore backend, you
+          can back out of your changes by not saving the file. In that
+          case you would, of course, lose all your other
+          changes.</para>
+      </section>
+
+    </chapter>
+
+
+    <chapter><title>Documents</title>
+      <para>The Documents menu contains the options that show the real
+      data Kura is all about: lexemes, recordings, manuscript scans
+      and bibliographic references.</para>
+
+      <section><title>Lexicon</title>
+
+        <para>Table: <link linkend="lng_lex">lng_lex</link></para>
+
+        <para>The lexicon view shows a long list with all currently
+          selected lexemes. You can filter the lexemes by creating a
+          different selection using the Find option, or by choosing a
+          language in the language combobox in the toolbar.</para>
+        
+        <para>Using the Kura lexicon has been described in the <link
+          linkend="tutoriallexeme">tutorial</link>.</para>
+
+      </section>
+
+
+
+      <section><title>Recording</title>
+
+
+        <para>Table: <link linkend="lng_recording">lng_recording</link></para>
+
+        <para>The table with recordings points, in the form of url's
+          to sound files. Note that the idea of an url is not limited
+          to http addresses: and url can just as well point to a local
+          file, an ftp file or any of dozens other protocol dependent
+          location. So if you make your recordings public in a free
+          format, like ogg or realaudio, you can point your readers to
+          those files from you analysises.</para>
+
+      </section>
+
+      <section><title>Scan</title>
+
+        <para>Table: <link linkend="lng_scan">lng_scan</link></para>
+
+        <para>The table with scans contains pointers similar to those
+          in the recordings table to images. The idea is to scan in
+          the priceless manuscripts you've transcribed to analyze the
+          texts, and make them available when you publish you
+          analysis.</para>
+
+      </section>
+
+      <section><title>Text</title>
+
+
+        <para>Table: <link linkend="lng_text">lng_text</link></para>
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-interlinear-12">
+          </imageobject>
+          <caption><para>Text view</para>
+          </caption>
+        </mediaobject>
+
+        <para>The text view is more complex than the others. On the
+          left side, there is a tree of languages and texts.
+          Currently, this list is always filled with all languages and
+          text. You cannot filter here.</para>
+
+        <para>The text view toolbar buttons have the following
+          functions: Insert new stream, insert new element, remove
+          currently selected item, edit current item, edit text, apply
+          changes, cancel changes.</para>
+
+        <para>In the interlinear text, you can move using the cursor
+          keys, home and end. Moving around in the text or clickin on
+          an item puts the contents of that item in the edit field.
+          Pressing <keysym>Enter</keysym> makes the edit field active.
+          Pressing <keysym>Enter</keysym> again, or clicking on the
+          apply button applies your changes to the text.
+          Double-clicking on an item opens a detailed dialog window
+          for that item.</para>
+
+        <para>The interlinear text view uses the
+          <emphasis>TR</emphasis> tag for the translations of the
+          streams and the <emphasis>GL</emphasis> tag for the glosse
+          of the individual elements. The elements shown are of the
+          type <emphasis>FORM</emphasis>.</para>
+
+        <para>In contrast with Kura 1.2, it is no longer possible to
+          alter these settings except through hacking the code. On the
+          other hand, the interlinear editor now works.</para>
+
+      </section>
+
+      <section><title>References</title>
+
+        <para>Table: <link linkend="lng_reference">lng_reference</link></para>
+
+        <para>The references table is not a full substitute for a
+          bibtex database, but it can be useful if you want to
+          generate documents using the Kura database that include
+          bibliographic references. References are divided into a main
+          category and subdivided into subcategories. You can create
+          new categories in the
+          <guimenu>Configuration</guimenu>/<guimenuitem>Reference
+            Categories</guimenuitem> table.</Para>
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-references">
+          </imageobject>
+          <caption><para>Text view</para>
+          </caption>
+        </mediaobject>
+
+        <para>You can also link references to texts, streams, elements
+          or lexemes by choosing the REF tag and picking one from this
+          list.</para>
+
+      </section>
+
+    </chapter>
+
+    <chapter><title>Adminstration</title>
+
+      <para>The Administration menu contains administrative tables
+        that determine the languages, users and projects that Kura
+        knows about. The contents of these tables are not used by the
+        Kura code directly, so changing things here doesn't break
+        much.</para>
+
+
+      <section><title>Project</title>
+
+        <para>Table: <link linkend="lng_project">lng_project</link></para>
+
+        <para>Work in Kura is organized by project. Projects can
+        comprise the writing of an article, or the compilation of a
+        complete dictionary. Projects have a description, a summary
+        and an URL for the project webpage. The document the
+        project produces can be chosen here, too. Finally,
+        abbreviations for eventual grants can be entered in the grants
+        field.</para>
+
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-project">
+          </imageobject>
+          <caption><para>The test project again.</para>
+          </caption>
+        </mediaobject>
+
+      </section>
+
+      <section><title>Language</title>
+
+        <para>Table: <link linkend="lng_language">lng_language</link></para>
+
+        <para>Kura, of course, deals with languages. The registration
+          of meta-data about languages is fairly simplistic in this
+          release of Kura, and not extensible. For instance, preferred
+          script, character set and sort order are not possible.</para>
+
+      </section>
+
+      <section><title>User</title>
+
+        <para>Table: <link linkend="lng_user">lng_user</link></para>
+
+        <para>Kura uses the user table to keep track of who has last
+        edited which record.</para>
+      </section>
+
+      <section><title>Affiliations</title>
+
+        <para>Table: <link linkend="lng_affiliationcode">lng_affiliationcode</link></para>
+
+        <para>The affiliations view stores the affiliations you can
+        associate with certain user. As you can see, it's the
+        simplicity itself.</para>
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-affiliations">
+          </imageobject>
+          <caption><para>The Affiliations dialog.</para>
+          </caption>
+        </mediaobject>
+
+      </section>
+
+      <section><title>Document</title>
+
+        <para>Table: <link linkend="lng_document">lng_document</link></para>
+
+        <para>This is a list of documents you can choose from when you
+        associate a root document with a project.</para>
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-documents">
+          </imageobject>
+          <caption><para>The documents dialog.</para>
+          </caption>
+        </mediaobject>
+
+
+      </section>
+
+    </chapter>
+
+    <chapter id="configuration"><title>Configuration</title>
+
+      <para>The configuration tables offer the possibility of
+        expanding Kura without changing code. You are free in what you
+        add. However, you need to be aware that
+        <emphasis>deleting</emphasis> records can create big problems
+        since Kura uses some values in the code itself. And if you
+        first add an item, use it in your project, and then try to
+        delete it, you might delete all dependent data, too, in one
+        fell swoop. Take care, plan ahead, and have fun.</para>
+
+      <section><title>Tags</title>
+
+        <para>Table: <link linkend="lng_tag">lng_tag</link></para>
+
+        <para>Tags are the definitions of the kinds of annotations you
+          can add to texts, streams, elements and lexemes. Tags
+          themselves have a certain type, that determines whether the
+          value of the tag must be chosen from a limited set, whether
+          the tag allows for a longer free-form text, or a shorter
+          text or whether the tag should present a picklist of defined
+          bibliographic references.</para>
+
+
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-tags">
+          </imageobject>
+          <caption><para>Default tags.</para>
+          </caption>
+        </mediaobject>
+
+        <para>Tags have an abbreviation, a full name, a description, a
+          type, and can be selected for texts, streams, elements and
+          lexemes. Some kinds of tags, like Penn-Treebank parts of
+          speech are inappropriate for texts, for instance, others,
+          like reference works are applicable to everything.</para>
+
+        <para>Please, take care. Do not, never, remove the GL, ABBR or
+          TR tags. Kura will cease functioning.</para>
+
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-tags1">
+          </imageobject>
+          <caption><para>Default tags.</para>
+          </caption>
+        </mediaobject>
+
+      </section>
+
+      <section><title>Tag Categories</title>
+
+        <para>Table: <link linkend="lng_tagtypecode">lng_tagtypecode</link></para>
+
+        <para>As said in the previous section, tags are defined to
+          have a certain type. These types are defined in this table.
+          The abbreviation and description are not really necessary,
+          but it is nice to be able to distinguish tags in a more
+          meaningful way.</para>
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-tagtypecode">
+          </imageobject>
+          <caption><para>Tag types.</para>
+          </caption>
+        </mediaobject>
+
+      </section>
+
+
+      <section id="tagdomains"><title>Tag Domains</title>
+
+        <para>Table: <link linkend="lng_tagdomain">lng_tagdomain</link></para>
+
+        <para>Certain tags can be defined to be of the type 'DOMAIN'.
+          That means that there will be a fixed list of choices when
+          you want to add such a tag to a record. This table is where
+          those fixed choices are defined. Examples are abbreviations
+          or syntactical functions that you want to be the same
+          everywhere.
+        </para>
+
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-tagdomain">
+          </imageobject>
+          <caption><para>Tag domains.</para>
+          </caption>
+        </mediaobject>
+
+      </section>
+
+      <section><title>Element types</title>
+
+        <para>Table: <link linkend="lng_elementtypecode">lng_elementtypecode</link></para>
+        <para>Element types are in principle a closed category. Kura
+          uses the codes in this table to determine what to show you
+          in interlinear text.</para>
+
+        <para>You can add to this category, but the only of elements
+          that are directly shown are 'FORM' elements. You can
+          subdivide forms into 'MORPHEME' and 'MORPHEME' elements into
+          'PHONEME' elements. The 'CLAUSE' type elements are intended
+          to divide sentences, which Kura calls '<link
+          linkend="streamdefined">streams'</link>. However, 
+          use of this element is not fully supported in Kura 2.0.</para>
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-elementtypecode">
+          </imageobject>
+          <caption><para>Element types.</para>
+          </caption>
+        </mediaobject>
+
+        <para>The fields splitmarker and joinmarker are used to let
+          Kura know where it can seperate elements of this type, and
+          how it should join those elements for presentation
+          purposes.</para>
+
+        <para>For instance, if you want to separate a form into
+          morphemes, you would type dots at the morpheme boundaries,
+          and then ask Kura to perform a split.</para>
+
+      </section>
+
+      <section><title>Lexical Relations</title>
+        
+        <para>Table: <link linkend="lng_lxlxrelcode">lng_lxlxrelcode</link></para>
+
+        <para>Kura can store relations between lexemes in the
+          database, and use those relations to produce cross-linked
+          dictionaries, for instance in HTML. Using the menu opion
+          <guimenu>Configuration</guimenu><guimenuitem>Lexical
+            Relation</guimenuitem>, you can review the default types
+          of lexical relations Kura offers.</para>
+
+        <para>This list is extensible, so if you need to add a new
+          kind of compound, or a more specific kind of etymological
+          relation, you can add them here.</para>
+         
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-lexrel">
+          </imageobject>
+          <caption><para>Lexical relation types.</para>
+          </caption>
+        </mediaobject>
+
+      </section>
+
+      <section><title>Reference categories</title>
+
+        <para>Table: <link
+        linkend="lng_categorycode">lng_categorycode</link></para>
+
+        <para>Reference categories are simply kinds of bibliographic
+          references. If you use these to define your references,
+          Kura's presentation modules will know how to output the
+          reference.
+        </para>
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-referencecat">
+          </imageobject>
+          <caption><para>Lexical relation types.</para>
+          </caption>
+        </mediaobject>
+
+      </section>
+
+
+    </chapter>
+
+  </part>
+
+  <part id="part4">
+    <title>Extending Kura</title>
+
+    <partintro>
+      <para>Kura is meant to be extensible. It is also meant to be
+        used by field linguists, i.e. by people who think nothing of
+        traipsing through sky-high mountains and enduring unspeakable
+        discomforts in the pursuit of knowledge. So, I guess I can
+        count on having determined, bloody-minded users of fair
+        intelligence. So this isn't a 'for dummies' chapter. To get
+        the most out of Kura you should start reading the Python
+        tutorial at <ulink
+        url="http:/www.python.org/doc/current/tut/tut.html">www.python.org</ulink>.
+      </para>
+
+      <warning><title>Warning</title><para>If you use the file
+          datastore backend you should <emphasis>NOT</emphasis> keep
+          Kura open while using the scripts. Your data
+          <emphasis>WILL</emphasis> become corrupted. If you want to
+          access your data from more than one program at the same
+          time, use the MySQL database.</para>
+      </warning>
+
+    </partintro>
+
+    <chapter id="addtags"><title>Creating new tags</title>
+      <para>Adding a new tag is easy. Open the
+        <guimenu>Configuration</guimenu>/><guimenuitem>Tags</guimenuitem> 
+        screen, press <keysym>INS</keysym> and type away. But most
+        likely you will find the default selection quite
+        sufficient.</para>
+
+
+      <para>Anyway, in a short time we're going to import data into
+      Kura from a file, and it would be nice to store the source of
+      those records in a tag. Go, add a tag:</para>
+
+
+        <mediaobject>
+          <imageobject>
+          <imagedata scale="50" align="center"
+                     fileref="screenshots/kura-tagadded">
+          </imageobject>
+          <caption><para>Adding a tag.</para>
+          </caption>
+        </mediaobject>
+
+      <para>It will be useful in the next chapters.</para>
+
+      <para>It's more likely that you would want to add entries to the
+        tag domains table: the lists that determines what choices a
+        fixed-choice tag offers you. See <link
+         linkend="tagdomains">the section on the tag domains
+         table</link> for that.</para>
+
+    </chapter>
+
+    <chapter id="scripting"><title>Creating scripts that use the Kura
+        database</title>
+
+      <para>It is very easy to script Kura. You use the <ulink
+        url="http:/www.python.org">Python</ulink> language for that
+        purpose. Python is quite easy to learn; there are many tutorials
+        available, but most people who have at least some experience
+        with programming will be able to grok the examples in this
+        chapter without problems.</para>
+
+      <para>You will find the example scripts used in this section in
+        the <filename>doc</filename> subdirectory of your Kura
+        installation directory.</para>
+
+      <section><title>Opening the database and retrieving data</title>
+
+        <para>The first operation generally is to open the relevant
+          database or datastore. Kura uses a central application
+          object to access the data. That object, the
+          <classname>KuraApp</classname> class can use different
+          backends depending on whether you want to use a MySQL
+          database or a file.</para>
+
+        <para>First you have to import the application object, then
+          select a backend and then connect to the database or the
+          file. You can either use the same default values as the Kura
+          gui uses, or hack your own values in the script. Here, I use
+          the gui defaults (<classname>guiConf</classname>) to
+          determine whether to open a file or a database.</para>
+
+        <example>
+          <title>Connecting to the database (script1.py)</title>
+          <programlistingco>
+            <areaspec>
+              <area coords="1" id="connecting1">
+              <area coords="2" id="connecting2">
+              <area coords="3" id="connecting3">
+              <area coords="4" id="connecting4">
+              <area coords="6" id="connecting5">
+              <area coords="8" id="connecting6">
+              <area coords="10" id="connecting7">
+              <area coords="23" id="connecting8">
+            </areaspec>
+            <programlisting>
+import os.path, sys
+from kuralib import kuraapp
+from kuragui.guiconfig import guiConf
+from kuragui import guiconfig
+
+if guiConf.backend == guiconfig.FILE:
+    kuraapp.initApp(guiConf.backend,
+                    dbfile = os.path.join(guiConf.filepath, 
+                                          guiConf.datastore))
+elif guiConf.backend == guiconfig.SQL:
+    if guiConf.username != "":
+        try:
+            kuraapp.initApp(guiConf.backend,
+                            username = str(guiConf.username),
+                            database = str(guiConf.database),
+                            password = str(guiConf.password),
+                            hostname = str(guiConf.hostname))
+            
+        except Exception, e:
+            print "Error connecting to database: %s" % e
+            sys.exit(1)
+            
+kuraapp.initCurrentEnvironment(guiConf.usernr,
+                                   guiConf.languagenr,
+                                   guiConf.projectnr)
+
+
+            </programlisting>
+            <calloutlist>
+              <callout arearefs="connecting1">
+                <para>These are standard Python modules.
+                  <classname>os.path</classname> is used to join
+                  directory names and filenames in a platform
+                  independent way. <classname>sys</classname> is used
+                  here to provide for a way to exit the script when we
+                  couldn't connect to a database</para>
+              </callout>
+              <callout arearefs="connecting2">
+                <para>The central application object comes from the
+                <classname>kuralib</classname> module. If the script
+                complains that it cannot find this class, add the
+                directory where Kura is installed to the PYTHONPATH
+                environment variable. For instance:</para>
+                <screen>
+export PYTHONPATH=/usr/local/share/kura
+                </screen>
+              </callout>
+              <callout arearefs="connecting3">
+                <para>This line imports the configuration settings of
+                the Kura gui client. Using these settings, you know
+                that your script will use the same database or
+                datastore that Kura uses.</para>
+              </callout>
+              <callout arearefs="connecting4">
+                <para>The <classname>guiconfig</classname> module also
+                contains some definitions we need to determine whether
+                to use the file or the database, so we import it,
+                too.</para>
+              </callout>
+              <callout arearefs="connecting5">
+                <para>This line determines whether Kura uses the file
+                  backend.</para>
+              </callout>
+              <callout arearefs="connecting6">
+                <para>If that is true, the script proceeds to
+                  create the right backend using the
+                  <classname>kuraapp</classname>.<function>initApp()</function> 
+                  function. The first argument is the backend which
+                  should be used, the second argument the file to be
+                  opened. You could easily open another file by
+                  saying:
+                  <programlisting>
+kuraapp.initApp(guiconfig.FILE, "~/projects/myfile.dbobj")
+                  </programlisting>
+                </para>
+              </callout>
+              <callout arearefs="connecting7">
+                <para>If the backend didn't happen to be a file, this
+                line will check if it is a database. If that's so,
+                Kura proceeds to connect to the database. It is quite
+                  possible for that operation to fail, for instance if
+                you forgot to start the MySQL server. In that case, an
+                exception will be thrown, and the script will exit
+                with the error code 1.</para>
+              </callout>
+              <callout arearefs="connecting8">
+                <para>Finally, some default values need to be set. The
+                <classname>kuraapp</classname>.<classname>KuraApp</classname> 
+                  class expects to know the default language, user and
+                  project you are working with. Whether that is
+                  actually important depends on the rest of the
+                  script.</para>
+              </callout>
+            </calloutlist>
+          </programlistingco>
+        </example>
+
+        <para>Now that we have a working application object, we can
+          use it to select a list of, say lexemes, and do something
+          useful with it. In this example script, we will print a
+          simple list of lexeme-glosse pairs.</para>
+
+        <programlisting>
+rows = kuraapp.app.getObjects("lng_lex",
+                              languagenr = 1)
+for row in rows:
+    print row.form, row.glosse
+        </programlisting>
+
+        <para>As you can see, once you've set up date application life
+        suddenly gets <emphasis>very</emphasis> simple. The
+        application object, which we access via the <classname>kuraapp</classname>
+        module (because it's a module level variable we are sure we use the
+        same object everywhere), has a number of handy methods, like the one
+        used here.</para>
+
+        <para>This method, <function>getObjects</function>takes one
+          string parameter, the name of the table we want to retrieve
+          data from (see <link linkend="datamodel">the data
+            model</link>), and an unspecified number of named
+          arguments.</para>
+
+        <para>These arguments are the fields you want to filter the
+        result with; these can only be the fields that the table
+        'owns', not the descriptions retrieved from related
+        tables.</para>
+
+        <para>So, you <emphasis>can</emphasis> select on
+          <command>languagenr = 1</command> but not on
+          <command>language = "%den%"</command>. You
+          <emphasis>can</emphasis> use the % wildcard.</para>
+
+        <para>The <function>getObjects</function> function returns a
+          Python list containing the result of your query. Now you can
+          use a simple for loop to loop over the records</para>
+
+        <para>These records have a rich set of functions, too, but at
+          the most basic level, you can use use the dot notation to
+          set and get values. (But there's also
+          <function>getFieldValue</function> and
+          <function>setFieldValue</function> which you can use if you
+          want to loop over all fields in a record.)</para>
+
+        <para>Now run this script as follows:</para>
+
+        <screen>export KURADIR=/usr/local/share/kura
+expor PYTHONPATH=/usr/local/share/kura
+/usr/bin/python script1.py</screen>
+
+        <para>And after a while you will get the following output (if
+        you've done the tutorial, that is):</para>
+
+        <screen>
+Initializing repository
+Opening datastore:  /home/boudewijn/prj/kura-2.0/test.dbobj
+Loading database: 0.0884840488434 seconds
+sumir wine
+esumir drink
+sumiran drinker
+sumirsumiran wine-bibber
+tan RTV
+yudir woman
+ray good
+esam say
+ga TOP
+boudewijn</screen>
+
+      </section>
+
+      <section><title>Parents and children</title>
+
+        <para>Kura is based on a relation datamodel. That means (as
+          I've explained in the <link
+        linkend="introduction">introduction</link> that things like
+          lexemes do not stand on their own, but are part of a web of
+          references to other things, like elements in a sentence.
+          The next version, <filename>script2.py</filename>, will show
+          you how to find display the sentences a lexeme occurs in:
+        </para>
+        
+        <para>The first part of the script is the same as with the
+        previous example: I won't repeat it here.</para>
+
+        <example>
+          <title>Example sentences with words from the dictionary
+            (script2.py)</title>
+        <programlisting>
+lexemes = kuraapp.app.getObjects("lng_lex",
+                              languagenr = 1)
+for lexeme in lexemes:
+    elements = kuraapp.app.getObjects("lng_element",
+                                      lexnr = lexeme.lexnr)
+    if elements:
+        print lexeme.form, lexeme.glosse
+        print
+        
+        examples = {}
+        for element in elements:
+            if not examples.has_key(element.streamnr):
+                stream = kuraapp.app.getObject("lng_stream",
+                                               streamnr = element.streamnr)
+                examples[element.streamnr] = stream
+                
+        for streamnr, stream in examples.items():
+           
+            print "\t", stream.text
+            print "\t", stream.translation()
+            print
+        print
+        print
+          </programlisting>
+        </example>
+
+        <para>In the script above, we first loop over all lexemes in
+          our lexicon. Then we retrieve the elements from the texts that
+          have been associated with lexemes.</para>
+
+        <para>If we get any elements (that's not a certainty, of
+          course), the form and the glosse fields of the lexeme are
+          printed. Then we loop trough all elements, and for each
+          element retrieve the stream the element belongs to.</para>
+
+        <para>These streams we store in a temporary Python
+          datastructure named a <emphasis>dictionary</emphasis>, named
+          'examples'. The dictionary has the
+          advantage that it is indexed by key, and that those keys are
+          unique. This means that if our lexeme is associated with
+          more than one element in a stream and thus ultimately more
+          than once with the same stream, we will only print the
+          stream once.</para>
+
+        <para>Otherwise we'd have a big chance of giving the same
+          example sentence twice for the same lexeme. And that would
+          look silly.</para>
+
+        <para>So, when the set of examples is established for this
+          lexeme, we loop through the example streams, and print the
+          text and the translation:</para>
+
+        <screen>
+sumir wine
+
+        Sumiran sumir esumire
+        The drinker drank the wine.
+
+        Esame, sumir ga ray
+        He said, this wine, it's good.
+
+
+
+esumir drink
+
+        Sumiran sumir esumire
+        The drinker drank the wine.
+
+
+
+esam say
+
+        Esame, sumir ga ray
+        He said, this wine, it's good.
+
+
+
+ga TOP
+
+        Esame, sumir ga ray
+        He said, this wine, it's good.</screen>
+          
+        <para>Of course, we can also output a nicely interlinearized
+          text (script3.py):</para>
+
+        <example>
+          <title>Interlinear texts</title>
+        <programlisting>
+for text in kuraapp.app.getObjects("lng_text"):
+    print
+    print text.title
+    print
+    print text.description
+    print
+    for stream in text.getStreams():
+        print
+        print stream.getInterlinearLines(stream.getElements()
+        print stream.translation()
+          </programlisting>
+        </example>
+
+        <para>Again, this uses the first part of the first script 
+        demonstrated in this chapter. The output is as follows:</para>
+        
+        <screen>boudewijn@ejb:~/prj/kura-2.0> /usr/bin/python doc/script3.py
+          Initializing repository
+Opening datastore:  /home/boudewijn/prj/kura-2.0/test.dbobj
+Loading database: 0.0685980319977 seconds
+
+Sumir
+
+A remark about wine.
+
+
+Sumiran sumir esumire
+drinker wine  drink
+The drinker drank the wine.
+
+Esame sumir ga  ray
+say   wine  TOP good
+He said, this wine, it's good.</screen>
+
+
+        <para>As you can see, it's really easy to hack up short
+          scripts that enable you to work with the data in your
+          database. A more real-world example would be a more complex
+          script that creates LaTeX output from your database, for
+          instance a complete, marked-up dictionary.</para>
+
+      </section>
+
+      <section><title>Performing calculations on your database</title>
+
+        <para>You also might want to apply calculations or analysises on
+          your database. This is not much different from the examples
+          in the previous section, since it also entails retrieving
+          data from the database, looping through it, and performing
+          some action.</para>
+
+        <para>Let's create a script that shows you the word order of
+          the example sentences. This script depends on their being
+          the right tags, so make sure you've completely filled the
+          database.</para>
+
+<example><title>Calculating the word order</title>
+<programlisting>
+False = 0
+True = 1
+
+import os.path, sys
+from kuralib import kuraapp
+from kuragui.guiconfig import guiConf
+from kuragui import guiconfig
+
+if guiConf.backend == guiconfig.FILE:
+    kuraapp.initApp(guiConf.backend,
+                    dbfile = os.path.join(guiConf.filepath,
+                                          guiConf.datastore))
+elif guiConf.backend == guiconfig.SQL:
+    if guiConf.username != "":
+        try:
+            kuraapp.initApp(guiConf.backend,
+                            username = str(guiConf.username),
+                            database = str(guiConf.database),
+                            password = str(guiConf.password),
+                            hostname = str(guiConf.hostname))
+            
+        except Exception, e:
+            print "Error connecting to database: %s" % e
+            sys.exit(1)
+            
+kuraapp.initCurrentEnvironment(guiConf.usernr,
+                               guiConf.languagenr,
+                               guiConf.projectnr)
+
+
+orders = {}
+
+for stream in kuraapp.app.getObjects("lng_stream"):
+    order = []
+    for element in stream.getElements():
+        tag = element.getTag(tag = "POS")
+        if tag.element_tagnr:
+            order.append(tag.getDescription(False))
+            continue
+        elif element.lexnr:
+            lexeme = kuraapp.app.getObject("lng_lex",
+                                      lexnr = element.lexnr)
+            tag = lexeme.getTag(tag = "POS")
+            if tag.lex_tagnr:
+                order.append(tag.getDescription(False))
+                continue
+        order.append("#")
+
+    s = " ".join(order)
+    if orders.has_key(s):
+        orders[s] += 1
+    else:
+        orders[s] = 1
+    
+for k, v in orders.items():
+    print k, v
+          </programlisting>
+        </example>
+
+        <para>This script is a little more the previous scripts. We
+          are again building a dictionary, with the name 'orders'. We
+          will use the actual word order as the key to this
+          dictionary. The value is the number of times that order
+          occurs.</para>
+
+        <para>We select all the streams in our database (a measly two,
+          unless you've been adding texts since the tutorial). For
+          each stream we determine the order of the words. In this
+          case, we have decided that the tag POS (for Part Of Speech)
+          carries the necessary information: noun, verb
+          etcetera.</para>
+
+        <para>The parts of speech will be stored in order in a list:
+          that list is called 'order'.</para>
+
+        <para>If the element itself has not been taggend, that is,
+          when we use the function element.getTag(tag = "POS") and get
+          back an emtpy tag record, we try again, with the lexical
+          item associated with the element. If that doesn't give us a
+          POS tag, we give in and put a hash sign in the order.</para>
+
+        <para>When all elements for that stream have been analyzed,
+          the list of elements ('order') is complete. We now convert
+          the list to a string, because you cannot use lists as keys
+          to a dictionary in Python. It's a pity, but there it is --
+          if you want to know more, consult the Python tutorial. The
+          conversion is done by joining the parts with a space:
+          <command>" ".join(order)</command> is the command.</para>
+        
+        <para>Then, when we've got our word order token in the string
+          's', we determine whether we have encountered it before.
+          That is, when it already occurs in the dictionary, we simply
+          bump up the count by one. If it's a new token, we create an
+          entry and set the count to one.</para>
+
+        <para>Finally, the contents of the dictionary are
+        printed:</para>
+
+        <screen>
+boud@calcifer:~/prj/kura-2.0> python doc/script4.py
+Initializing repository
+Opening datastore:  /home/boud/prj/kura-2.0/test.dbobj
+Loading database: 0.0657420158386 seconds
+N N V 1
+V N PART STATV 1
+        </screen>
+
+        <para>It's not much at the moment, but imagine! With thousands
+          of texts all neatly marked up... Get typing already.</para>
+
+      </section>
+
+      <section><title>Adding and modifying data</title>
+
+        <para>The scripts in this section are intrinsically more
+        dangerous than the scripts in the previous section. After all,
+        if you add a whole load of garbage to your carefully filled
+        database, you will probably not be able to undo the
+        changes.</para>
+
+        <para>So, it's a good idea to make a backup of your data,
+          possbile as part of your script. If you're on Unix, you
+          could probably use code like this to create a backup:</para>
+
+        <example><title>Backing up with a script</title>
+          <programlisting>
+import os.path
+from kuragui.guiconfig import guiConf
+from kuragui import guiconfig
+
+if guiConf.backend == guiconfig.FILE:
+    f = os.path.join(guiConf.filepath, guiConf.datastore)
+    os.system("cp %s %s.bak" % (f, f))
+elif guiConf.backend == guiconfig.SQL:
+    os.system("mysqldump %s -p=%s -u=%s -h=%s > backup.sql"
+              % (str(guiConf.database),
+                 str(guiConf.password),
+                 str(guiConf.username),
+                 str(guiConf.hostname))
+          </programlisting>
+        </example>
+
+        <para>So, now that you know how to backup, you can safely
+          mangle your data. Let's create a little script that adds a
+          load of lexical items to your database. You will probably
+          already have set of files that contain lexical data. You
+          first task is to massage those files into a semblance of
+          parseable unity.</para>
+        
+        <para>For the sake of this example, I've assumed a simple
+          comma separated format, such as KSpread, Gnumeric or Windows
+          apps like Access all know how to produce.</para>
+
+        <para>Parsing csv files is harder than you'd think, and this
+          is an excellent opportunity to learn about the wonderful
+          <ulink url="http://www.vex.net/parnassus/">Vaults of
+            Parnassus</ulink>, where you can find lots of extensions
+          for Python, most of them free.</para>
+
+        <para>The query <ulink
+           url="http://py.vaults.ca/apyllo.py?find=csv">
+           http://py.vaults.ca/apyllo.py?find=csv</ulink> gives us
+           a plethora of csv parsing packages, but let's take a simple
+           one, one that I can package in this tutorial: splitcvs from
+           <ulink url=" http://www.colorstudy.com/software/webware/">
+            Colotstudy</ulink>.</para>
+
+        <para>First, we're going to write code that reads the file
+          with lexemes (<filename>lexicon.csv</filename>) and splits
+          it. We print the result of the splitting, so we can be sure
+          our code is correct. Please consult the complete script
+          (<filename>script5.py</filename>) for the splitCSVLine
+          function and the way the initalisation of the kuraapp.app
+          object has moved to a <function>init()</function> function.</para>
+
+        <example><title>Importing lexical data (script5.py)</title>
+          <programlisting>
+
+...
+
+def main(args):
+    if len(args) < 2:
+        print "Usage: python script5.py f1...fn"
+        sys.exit(1)
+    init()
+    for line in codecs.open(sys.argv[1], "r", "UTF-8"):
+        print splitCSVLine(line)
+
+if __name__ == "__main__":
+    main(sys.argv)
+          </programlisting>
+        </example>
+
+        <para>As you can see, we've moved the body of the script code
+          into a function, called <function>main(args)</function>. This is
+          useful when your scripts start to get bigger. When that's
+          the case, you will likely have created several useful
+          functions you might like to use from other scripts.</para>
+
+        <para>Now if you import a Python script file, python executes
+          every statement from the first line to the last. That's not
+          what you want when you import a script: in that case you
+          merely want access to the functions. So, if you move your
+          script code into a <function>main(args)</function> function,
+          only the <function>def</function> statements will be
+          executed: that means that Python defines the functions, but
+          doesn't execute them yet. When the Python interpreter
+          arrives at the <programlisting>if __name__ ==
+            "__main__":</programlisting> line, it will see whether the
+          name of the function is executing is
+          <varname>__main__</varname>, and if that's the case, it
+          will execute the <function>main()</function> function. And,
+          if you run a script directly from the commandline, it
+          <emphasis>will</emphasis> define a
+          <varname>__name__</varname> to be "__main__", but not when
+          you import the a file.</para>
+
+        <para>The <classname>sys</classname> module provides a handy variable,
+          <varname>argv</varname> that contains the command-line
+          arguments to the script. If you start the script with:
+          <userinput>python script5.py lexicons.cvs</userinput>, the
+          arguments will be: <screen>['doc/script5.py',
+            'doc/lexicon.csv'] </screen>, which is easily demonstrated
+          by adding a <programlisting>print sys.argvc</programlisting>
+          line in the <function>main(args)</function> function.</para> 
+
+        <para>The <function>main(args)</function> function first
+          checks whether it has enough arguments, and if there aren't
+          enough, it complains and exits with an error. Otherwise, it
+          will take the second argument (with number 1 -- programming
+          is base zero) to refer to a filename.</para>
+
+        <para>Python has extensive support for Unicode (otherwise I
+          wouldn't have tried to write Kura in it). You need to use
+          the codecs module to open a file in another encoding than
+          your platform encoding (which is most likely ASCII). The
+          first argument to <function>codecs.open</function> is the
+          filename, the second the mode ("r" means read-only) and the
+          third the encoding. This can be anything from utf-8 to SJIS.
+          But the strings Python creates when reading lines from the
+          file will be Unicode objects.</para>
+
+        <para>So you can see that we open the file, read its lines and
+          process each line with the
+          <function>splitCSVLine()</function>. This function returns a
+          list for each line:</para>
+        <screen>oud@calcifer:~/prj/kura-2.0> python doc/script5.py doc/lexicon.csv
+Initializing repository
+Opening datastore:  /home/boud/prj/kura-2.0/test.dbobj
+Loading database: 0.0796259641647 seconds
+['form', 'glosse', 'POS', 'phonetic form', '']
+['hedrad', 'to force', 'V', 'he.drad', '']
+['jedor', 'winehouse', 'N', 'je.dor', '']
+['kinad', 'miracle', 'V', 'ki.nad', '']
+</screen>
+
+        <para>As you can see, the conversion is not perfect. This
+          function adds a spurious empty element at the end of each
+          line. We can ignore that, but it shows how import it is to
+          check the format of the data your script generates at every
+          step. (If you want to, you can also had the
+          <function>splitCSVLine(line)</function> to behave itself
+          better.</para>
+
+        <para>And now for the real fun. We're going to create lexemes
+          and insert them in the database, and then saving the
+          database.</para>
+
+        <programlisting>
+def main(args):
+    if len(args) < 2:
+        print "Usage: python script5.py f1...fn"
+        sys.exit(1)
+    init()
+    for line in codecs.open(args[1], "r", "UTF-8"):
+        line = splitCSVLine(line)
+        print "Inserting %s" % line[0]
+        lexeme = kuraapp.app.createObject("lng_lex", fields={},
+                                          form = line[0],
+                                          glosse = line[1],
+                                          languagenr = guiConf.languagenr,
+                                          phonetic_form = line[3],
+                                          usernr = guiConf.usernr)
+        lexeme.insert()
+        tag = kuraapp.app.createObject("lng_lex_tag", fields={},
+                                       lexnr = lexeme.lexnr,
+                                       tag = "POS",
+                                       value = line[2],
+                                       usernr = guiConf.usernr)
+        tag.insert()
+        tag = kuraapp.app.createObject("lng_lex_tag",
+                                       lexnr = lexeme.lexnr,
+                                       tag = "FILE",
+                                       value = args[1],
+                                       usernr = guiConf.usernr)
+        tag.insert()
+    kuraapp.app.saveFile()
+
+if __name__ == "__main__":
+    main(sys.argv)
+        </programlisting>
+
+        <para>If you haven't <link linkend="addtags">added a tag FILE
+        before</link>, you will get the following exception when you
+        run the script:</para>
+
+        <screen>
+boud@calcifer:~/prj/kura-2.0> python doc/script5.py doc/lexicon.csv
+Initializing repository
+Opening datastore:  /home/boud/prj/kura-2.0/test.dbobj
+Loading database: 0.075140953064 seconds
+Traceback (most recent call last):
+  File "doc/script5.py", line 99, in ?
+    main(sys.argv)
+  File "doc/script5.py", line 97, in main
+    tag.insert()
+  File "/home/boud/prj/kura-2.0/dbobj/dbobj.py", line 167, in insert
+    if  self.__verify() :
+  File "/home/boud/prj/kura-2.0/dbobj/dbobj.py", line 155, in __verify
+    self.__checkParents()
+  File "/home/boud/prj/kura-2.0/dbobj/dbobj.py", line 123, in __checkParents
+    if self.app.getObjects(relation.rtable, fields={key.foreign:keyval})==[]:
+  File "/home/boud/prj/kura-2.0/dbobj/appobj.py", line 305, in getObjects
+    tbl.select(rec, orderBy = orderBy)
+  File "/home/boud/prj/kura-2.0/dbobj/dbobj.py", line 426, in select
+    orderBy = orderBy)
+  File "/home/boud/prj/kura-2.0/dbobj/textdb/textquery.py", line 57, in select
+    resultSet = self.database[table].select(queryRec)
+  File "/home/boud/prj/kura-2.0/dbobj/textdb/table.py", line 245, in select
+    raise "No record in table %s with primary key %s " % (self.__name, str(pk))
+No record in table lng_tag with primary key FILE
+        </screen>
+
+        <para>On the other hand, if you have done so, then the script
+          will first create a new lexeme, and insert it. Upon
+          insertion, the field <varname>lexnr</varname> is
+          calculated, and then you use it to create the relation
+          between lexeme and tag.</para>
+
+        <para>Note that you need to <emphasis>save</emphasis> the
+          datastore explicitly with
+          <function>kuraapp.app.saveFile()</function>. The
+          <function>createObject()</function> function takes any
+          number of parameters. The first is the name of the table you
+          want to create an object of. The second parameter a named
+          one: <varname>fields</varname> and needs a dictionary with
+          field-value pairs. Or an empty dictionary if you go for
+          adding fieldsnames as parameters. That works, too.</para>
+
+        <para>And when you run the script, you will see the following
+        output:</para>
+
+        <screen>boud@calcifer:~/prj/kura-2.0> python doc/script5.py doc/lexicon.csv
+Initializing repository
+Opening datastore:  /home/boud/prj/kura-2.0/test.dbobj
+Loading database: 0.0587170124054 seconds
+Inserting hedrad
+Inserting jedor
+Inserting kinad
+Saving database: 0.0702489614487 seconds</screen>
+        
+
+        <para>Armed with this knowledge, you can create scripts as
+        complicated as you want. Consult the section on the <link
+        linkend="datamodel">datamodel</link> on which tables are
+        available and fields they sport. Consult the section on the
+        <link linkend="objectmodel">objectmodel</link> to learn the
+          API of Kura's library objects, and get coding!</para>
+
+      </section>
+    </chapter>
+
+    <chapter><title>Hacking Kura</title>
+      <para>This chapter gives you some pointers in case you want to
+      change Kura. I hope that if you do code some useful additions to
+      Kura you will share them with me!</para>
+
+      <section><title>Retrieving the code</title>
+
+        <para>The distribution of Kura does not contain everything.
+          For instance, the source for this manual isn't part of the
+          distribution. If you really want to start hacking Kura, you
+          need to get a CVS checkout. CVS is part of every Linux
+          distribution. The commandline client is easiest in daily
+          use, but you might want to try the <ulink
+          url="http://cervisia.sf.net">Cervisia KDE CVS gui</ulink>.</para>
+
+        <para>Execute the following command to get the latest Kura
+        sources:</para>
+
+        <screen>
+cvs -d :pserver:anonymous@rempt.xs4all.nl:/data/pub/cvsroot co kura-2.0
+        </screen>
+
+        <para>From now on, you can simple enter:</para>
+
+        <screen>
+cvs up
+        </screen>
+
+        <para>To sync your sources with mine. If you give:</para>
+
+        <screen>
+cvs diff -u > ~/kura-diffs
+        </screen>
+        
+        <para>Then you will get a file called kura-diffs in your home
+        directory that contains all your changes in unified diff
+        format. Ready for you to send me. Never send me patches that
+        are not in unified diff format!</para>
+      </section>
+      <section><title>Layout of the code</title>
+        
+        <para>The Kura sourcetree has the following parts:</para>
+        
+        <itemizedlist>
+          
+          <listitem>
+            <para>dbobj: the generic data objects code.</para>
+          </listitem>
+          
+          <listitem>
+            <para>dbobj/textdb: the file-based backend</para>
+          </listitem>
+          
+          <listitem><para>datamodel: sql scripts to create and fill
+              MySQL</para>
+          </listitem>
+
+          <listitem><para>dialogs: Qt Designer sources for the
+              special dialogs, wizards and widgets</para>
+          </listitem>
+          
+          <listitem><para>doc: the manual documentation</para>
+          </listitem>
+          
+          <listitem><para>kuragui: specialized gui elements, such as
+              data-aware listviews and dialog boxes.</para>
+          </listitem>
+          
+          <listitem><para>kuraclient: the code for the gui client.</para>
+          </listitem>
+          
+          <listitem><para>kuralib: specialiazed data objects</para>
+          </listitem>
+          
+          <listitem><para>pixmaps: toolbar buttons</para>
+          </listitem>
+          
+          <listitem><para>utils: useful scripts</para>
+          </listitem>
+          
+        </itemizedlist>
+        
+        <para>In the root directory there are scripts to create the
+          distributions, a makefile that is useful to clean up and
+          create documentation or dialogs and the
+          <filename>k</filename> script which is used to start the
+          developmet version of Kura.</para>
+        
+        <section><title>Adding a field to a table</title>
+          
+          <para>If you want to add a field to a table, first
+            consider whether you need the field, whether you cannot
+            use the tags tables. If you still want to add a field,
+            first write an <filename>upgrade.sql</filename> script
+            that adds the field to the database.</para>
+          
+          <para>Then update the repository information in
+            <filename>kuralib/lngapp.py</filename>. Take a good look
+            at the way other fields are defined. In particular, look
+            at the convenience functions at the beginning of
+            <filename>lngapp.py</filename>.</para>
+          
+          <para>In some cases, you are done now. Most tables use a
+            generic dialog that is dynamically created based on the
+            contents of the repostory.</para>
+          
+          <para>For other tables, there is a specialized dialog.
+            Check whether that is true in
+            <filename>dialogs</filename>. If you see one, update it
+            with Qt Designer. Then generate the forms with
+            <command>make dialogs</command>. Now the autogenerated
+            dialog will contain your new field. Then update the
+            corresponding proxy dialog from
+            <filename>kuraclient</filename>: it will have the same
+            name as the generated dialog, but starts with
+            <filename>dlg</filename> instead of
+            <filename>frm</filename>. Update that, too.</para>
+          
+          <para>If there isn't a Designer form, there might still be
+            a specialized dialog in <filename>kuraclient</filename>.
+            Check that and update it. Now test your new
+            field.</para>
+          
+        </section>
+        
+        <section><title>Adding a preference option</title>
+          <para>You need to hack
+            <filename>kuragui/guiconfig.py</filename> to add the
+            option, with defaults and perhaps code to read and write
+            the option.</para>
+          
+          <para>Your next call is to edit the
+            <filename>frmpreferences.ui</filename> with Qt Designer
+            and then to generate the form with <command>make
+              dialogs</command>. The corresponding dialog,
+            <filename>kuraclient/dlgpreferences.py</filename> must
+            be update, too. Take a good look at how options are read
+            and saved.</para>
+          
+          <para>What now remains is to use your preference in the
+            right places... For instance, if you've created a new
+            preference to change the color of the cursor in the
+            interlinear text editor, you would have to hack
+            <filename>kuraclient/kurailcanvas.py</filename>.</para>
+        </section>
+        
+        
+        <section><title>Adding a table</title>
+          <para>To add a table, you need to create an SQL script
+            that creates the table, and add the table to
+            <filename>lngapp.py</filename>. In
+            <filename>kuraclient/kurawindow.py</filename> you will
+            find code to add a menu option. Carefully look at the
+            existing code, and add your own.</para>
+          
+          <para>You should be done now, for simple tables. More
+            complex tables might need a more complex dialog window.
+            Take <filename>dlgtagtypecode.py</filename> as an
+            example, or perhaps
+            <filename>dlglexeme.py</filename>.</para>
+          
+        </section>
+        
+        <section><title>LaTeX output</title>
+
+          <para>Take a good, hard look at the grammar project. Look at
+            the <function>export()</function> function in, for
+            instance, <filename>kuralib/lng_text.py</filename>. Look
+            at <filename>kuralib/docbook.py</filename> for the
+            supporting functions. Now duplicate that for LaTeX. Of fix
+            the docbook2latex converters that do exist.</para>
+        </section>
+
+        <section><title>Adding a parser for texts</title>
+          
+          <para>This is an interesting hack. First, you need to
+            locate the place where I parse the texts. This is,
+            against any sane design decision, not in
+            <filename>kuralib/lng_elmt.py</filename> or
+            <filename>kuralib/lng_text.py</filename> but in
+            <filename>kuraclient/dlgnewtext.py</filename>.</para>
+          
+          <para>Cut the parser from that module, and make it use a
+            parser that using a config option (perhaps an extra
+            field in lng_language) can be dynamically loaded. Check
+            the current API of the parser, and change it, if
+            necessary in the code that calls the parser.</para>
+          
+          <para>Write the parser. Submit the diff!</para>
+          
+        </section>
+      </section>
+    </chapter>
+
+  </part>
+
+  <reference id="datamodel"><title>The datamodel</title>
+
+    <partintro>
+      <para>Please consult the <ulink
+        url="http://www.valdyas.org/linguistics/data000.jpg">chart of
+        the Kura datamodel</ulink> for an overview of how the Kura's
+        tables link. Most of the relations in that image still quite 
+        correct, except for the preferences table, which has
+        disappeared.</para>
+    </partintro>
+
+    &references;
+
+  </reference>
+  
+  
+  <chapter id="objectmodel"><title>The objectmodel</title>
+
+      <para>This is a simple listing of classes per package. For each
+        class, I list the methods you can count on not to
+        change.</para>
+
+      <para>Please consult the actual sourcecode to see what each
+        method does in case it's not completely obvious from the
+        method name. I am in te process of adding pydoc strings, but,
+        well, new features have priority.</para>
+
+    
+    <section><title>dbobj</title>
+
+      <para>Data objects.</para>
+
+      <section id="dbobjdbobj"><title>dbobj</title>
+
+        <para>Classes that represent tables and records.</para>
+
+        <programlisting>
+
+class dbRecord:
+  def __init__(self, app, table, fields={}):
+
+  def updateUser(self):
+
+  def next(self):
+
+  def insert(self, checkIntegrity=TRUE):
+
+  def deleteChildren(self, childtable):
+
+  def delete(self, delChildren=FALSE):
+    
+  def update(self):
+    
+  def getChildren(self, childtable, orderBy = None):
+
+  def hasChildren(self, childTable):
+
+  def createChild(self, childtable, relation):
+  
+  def picklist(self, fieldName):
+
+  def getFields(self):
+
+  def getOwnerFields(self):
+        
+  def getFieldValue(self, field):
+      
+  def getFieldValueAsString(self, field):
+
+  def getFieldDefinition(self, fieldName):
+    
+  def setFieldValue(self, field, value):
+
+  def getPrimaryKey(self):
+
+  def setPrimaryKey(self, pk):
+
+  def getDescriptorColumnName(self, field):
+    
+  def getForeignDescriptorColumnName(self, field):
+    
+  def getForeignKeyColumnName(self, field):
+
+  def getDescription(self):
+
+  def getLink(self):
+
+
+class dbTable:
+
+  def __init__(self, app, table, recObj=dbRecord ):
+
+  def select(self, queryRec, orderBy = None):
+    
+  def export(self, queryRec, format):
+        </programlisting>
+      </section>
+
+      <section><title>appobj</title>
+
+        <para>Classes that represent definitions for applications,
+          tables and fields. appobj.dbAppDef is the basis for
+          kuraapp.KuraApp.</para>
+
+        <programlisting>
+    
+class dbPair:
+
+    def __init__(self, local, foreign):
+
+
+class dbChildDef:
+
+    def __init__(self, childTable, keys):
+
+class dbRelationDef:
+
+    def __init__(self, name, keys, descriptors, rtable, ralias):
+
+class dbFieldDef:
+
+    def __init__( self
+                  , length = 255
+                  , pk=FALSE
+                  , datatype = VARCHAR
+                  , nullable=TRUE
+                  , sequence=FALSE
+                  , owner=TRUE
+                  , auto=FALSE
+                  , default=None
+                  , autoincrement = FALSE
+                  , relation = None
+                  , label = None
+                  , dialog=TRUE
+                  , inList=TRUE
+                  , url=FALSE
+                  , name=""
+                  , comment=""
+                  , hint=""
+                  , readonly=FALSE
+                  ):
+
+class dbTableDef:
+
+    def __init__( self, tabletype, alias,
+                  primarykey = None,
+                  fields={},
+                  descriptors=["description"],
+                  childtables={},
+                  lookuptables=[],
+                  fieldOrder=None,
+                  unique_indexes=[],
+                  indexes=[],
+                  name="",
+                  comment="",
+                  hint="",
+                  sequencebase=None):
+
+    def orderedFieldList(self):
+
+    def getChildDef(self, childtable):
+
+
+class dbAppDef:
+
+    def __init__(self, sql):
+    
+    def reconnect(self, host, user, database, password):
+    
+    def getLabel(self, tableName):
+
+    def getTableDef(self, tableName):
+
+    def getDefaultValueFor(self, key):
+
+    def createDefaultObject(self, tableName, fields={}, **args):
+
+    def createObject(self, tableName, fields={}, **args):
+
+    def createTableObject(self, tableName):
+
+    def getObject(self, tableName, fields=None, **args):
+            
+    def getObjects(self, tableName, fields={}, orderBy = None, **args):
+
+    def getObjectsByRec(self, rec, orderBy = None):
+            
+    def getTableLable(self, tableName):
+            
+    def addDef(self, **args):
+
+    def toXML(self, outfile):
+
+    def toSQL(self, outfile=sys.stdout):
+
+    def XMLinit(self, infile):
+
+            
+class dbAppObj:
+    def __init__(self, recObj, tblObj, label):
+ </programlisting>
+      </section>
+
+      <section><title>dbexceptions</title>
+
+        <para>Exceptions that can be thrown by the database.</para>
+
+        <programlisting>
+class dbError(Exception):
+  def __init__(self, errorMessage):
+
+class dbRecordNotFoundException(dbError):
+  def __init__(self, tableName, queryRec ):
+
+class dbTooManyRowsException(dbError):
+  def __init__(self, tableName, queryRec ):
+    
+class dbRepositoryError(dbError):
+  def __init__(self, error, tableName):
+
+class dbModuleError(dbError):
+  def __init__(self, error):
+        </programlisting>
+      </section>
+
+    </section>
+
+    <section><title>kuralib</title>
+
+      <para>The lng_XXX classes are based on dbobj.dbRecord and
+        dbobj.dbTable. Only the lng_XXX class are listed here that
+        offer extra functionality above and beyond that offered by
+        <link
+              linkend="dbobjdbobj"><classname>dbobj.dbobj</classname></link>.</para>
+
+      <section><title>lngapp</title>
+
+        <para>The central repository that defines the Kura
+        datamodel.</para>
+
+        <programlisting>
+def PK(relation=None): # primary key
+
+def SQ(label=None, dialog=TRUE, inList=TRUE, readonly=TRUE):
+
+def FK(relation,label=None, dialog=TRUE, inList=FALSE,
+readonly=FALSE):
+
+def OK(relation,label=None, dialog=TRUE, inList=FALSE, 
+       readonly=FALSE, default=None):
+
+def FC(relation, length=255,label=None, dialog=TRUE, 
+       inList=FALSE, readonly=FALSE):
+
+def OC(relation, length=255,label=None, dialog=TRUE, 
+       inList=FALSE, readonly=FALSE)
+
+def NN(datatype=VARCHAR, length=255,label=None, dialog=TRUE,
+       inList=TRUE, readonly=FALSE): 
+  
+def NO(label=None, inList=TRUE, dialog=FALSE, readonly=TRUE):
+
+def DS():
+
+def FL( length = 255
+      , pk=FALSE
+      , datatype = VARCHAR
+      , nullable=TRUE
+      , sequence=FALSE
+      , owner=TRUE
+      , auto=FALSE
+      , autoincrement=FALSE
+      , relation=None
+      , label=None
+      , dialog=TRUE
+      , inList=TRUE
+      , default=None
+      , readonly=FALSE
+      ):
+
+def setRepository(self):
+        </programlisting>
+      </section>
+
+      <section><title>lngobj</title>
+
+        <para>A mapping from table names to specific table
+        classes.</para>
+
+        <programlisting>
+def setObjects(self):
+        </programlisting>
+      </section>
+
+      <section><title>docbook</title>
+
+        <para>Utility functions to write docbook encoded
+        output.</para>
+
+        <programlisting>
+def xmlHeader(doctype):
+
+def periodical_RAW():
+
+def book_RAW():
+
+def collection_RAW():
+
+def website_RAW():
+
+def periodical():
+
+def book():
+
+def collection():
+
+def website():
+
+
+def lexemelink():
+
+def textlink():
+
+def glossentry():
+
+def recordingHeader():
+
+def recording(description = False):
+
+def scanHeader():
+
+def scan(description = False):
+
+def element(lexnr, note):
+
+def textHeader(r):
+
+def filter(s):
+        </programlisting>
+      </section>
+
+
+      <section><title>kuraaapp</title>
+
+        <para>Central application object for Kura.</para>
+
+        <programlisting>
+class KuraApp(dbAppDef):
+
+    def __init__(self,):
+    
+    def init(self, backend, **args):
+
+    def isDirty(self):
+
+    def openFile(self, filename):
+
+    def saveFile(self, filename = None):
+        
+    def settings(self, **args):
+
+    def reconnect(self, hostname, username, database, password):
+
+def initApp(backend, **args):
+
+def initCurrentEnvironment(usernr, languagenr, projectnr):
+        </programlisting>
+      </section>
+
+
+      <section><title>lng_abstract_tag</title>
+
+        <para>Basis for all classes that represent tags, such as <link
+        linkend="lng_text_tag">lng_text_tag</link>, <link
+        linkend="lng_stream_tag">lng_stream_tag</link>, <link
+        linkend="lng_element_tag">lng_element_tag</link> and <link
+        linkend="lng_lex_tag">lng_lex_tag</link>.</para>
+
+        <programlisting>
+class AbstractTag(dbRecord):
+  
+  def __init__(self, app, table, fields={}):
+
+  def getDescription(self, showifnone=True):
+
+  def getNewDescription(self):
+        </programlisting>
+      </section>
+
+      <section><title>lng_elmt</title>
+
+        <para>Represents <link linkend="lng_element">elements</link>
+          in a stream. Note that you can sort elements by sequence in
+          a stream.<para>
+
+        <programlisting>
+class lng_element(dbRecord):
+
+  def __init__(self, app, **args):
+
+  def __len__(self):
+
+  def getTags(self):
+
+  def getElements(self):
+
+  def buildElementTree(self):
+   
+  def translation(self, cache = True):
+
+  def note(self):
+    
+  def getGlosse(self):
+
+  def setGlosse(self, text):
+          
+  def getTag(self, tag):
+
+  def elmtLength(self):
+
+  def asDocbook(self):
+  
+  def type(self):
+    
+class lng_elements(dbTable):
+
+  def __init__(self, app):
+
+  def select(self, queryRec, orderBy = None):
+
+  def insert(self, streamnr, languagenr, elementTexts=[]):
+"""
+        </programlisting>
+      </section>
+
+      <section><title>lng_lex</title>
+
+        <para>Represents <link
+                               linkend="lng_lexeme">lexemes</link>.</para>
+
+        <programlisting>
+class lng_lex(dbRecord):
+
+  def __init__(self, app, **args):
+
+  def getTag(self, tag):
+      
+  def getLink(self):
+
+  def asDocbook(self):
+
+class lng_lexemes(dbTable):
+
+  def __init__(self, app):
+
+  def export(self, query, format, *args):
+        </programlisting>
+      </section>
+
+      <section><title>lng_lngg</title>
+
+        <para>Represents <link linkend="lng_language">languages</link>.</para>
+
+        <programlisting>
+
+class lng_language(dbRecord):
+
+  def __init__(self, app, **args):
+
+  def getChildLanguages(self):
+   
+class lng_languages(dbTable):
+
+  def __init__(self, app):
+        </programlisting>
+      </section>
+
+      <section><title>lng_recd</title>
+
+        <para>Represents <link
+        linkend="lng_recording">recordings</link>.
+        </para>
+
+        <programlisting>
+class lng_recording(dbRecord):
+
+    def __init__(self, app, **args):
+
+    def asDocbook(self):
+    
+class lng_recordings(dbTable):
+
+    def __init__(self, app):
+
+    def export(self, query, format, *arg):
+        </programlisting>
+      </section>
+
+      <section><title>lng_refs</title>
+        <para>Represents <link linkend="lng_reference">references</link>.</para>
+
+        <programlisting>
+class lng_reference(dbRecord):
+
+    def __init__(self, app, **args):
+
+    def asDocbook(self):
+
+class lng_references(dbTable):
+
+    def __init__(self, app):
+
+    def export(self, query, format, *args):
+        </programlisting>
+      </section>
+      <section><title>lng_scan</title>
+        <para>Represents <link linkend="lng_scan">scans</link></para>
+        <programlisting>
+class lng_scan(dbRecord):
+
+    def __init__(self, app, **args):
+
+    def asDocbook(self):
+
+class lng_scans(dbTable):
+
+    def __init__(self, app):
+
+    def export(self, query, format, *args):
+        </programlisting>
+      </section>
+      <section><title>lng_strm</title>
+        <para>Represents <link linkend="lng_stream">streams</link>.
+          Note that you sort streams by their sequence in a text. The
+          <function>getElements</function> function returns only those
+          elements that do not have a parent-element if all ==
+          False.</para>
+        <programlisting>
+class lng_stream(dbRecord):
+
+  def __init__(self, app, **args):
+   
+  def translation(self):
+
+  def note(self):
+    
+  def getTag(self, tag):
+    
+  def getTags(self):
+     
+  def getElements(self, all = False):
+
+  def asDocbook(self, asExample = False, simple=True):
+
+  def getInterlinearLines(self, elements):
+  
+  def simpleDocBook(self, asExample):
+  def tableDocBook(self, asExample):
+
+class lng_streams(dbTable):
+
+  def __init__(self, app):
+
+  def select(self, queryRec, orderBy = None):
+
+  def insert(self, textnr, languagenr, streamTexts=[]):
+
+  def export(self, query, format, simple = True):
+        </programlisting>
+      </section>
+
+      <section><title>lng_tag</title>
+        <para>Represents <link linkend="lng_tag">tag</link> definitions.</para>
+        <programlisting>
+class lng_tag(dbRecord):
+
+  def __init__(self, app, **args):
+
+  def getTagTypeCode(self):
+  
+  def getDomainTags(self):
+ 
+class lng_tags(dbTable):
+
+  def __init__(self, app):
+        </programlisting>
+      </section>
+
+      <section><title>lng_tdmn</title>
+        <para>Represents <link linkend="lng_tagdomain">tag domains</link></para>
+        <programlisting>
+class lng_tagdomain(dbRecord):
+
+  def __init__( self, app, **args):
+
+  def picklist(self, fieldName):
+
+class lng_tagdomains(dbTable):
+ 
+  def __init__(self, app):
+"""
+        </programlisting>
+      </section>
+
+      <section><title>lng_text</title>
+        <para>Represents <link linkend="lng_text">texts</link></para>
+        <programlisting>
+class lng_text(dbRecord):
+
+    def __init__(self, app, **args):
+
+    def translation(self):
+      
+    def getTags(self):
+      
+    def getTag(self, tag):
+
+    def removeStreams(self):
+
+    def getStreams(self):
+
+    def asDocbook(self, simple = True):
+
+    def getLink(self):
+
+class lng_texts(dbTable):
+
+    def __init__(self, app):
+
+
+    def export(self, query, format, simple = True):
+        </programlisting>
+      </section>
+    </section>
+
+
+  </chapter>
+  
+  <bibliography id="bibliography">
+
+    <biblioentry>
+        <author><surname>Bird</surname>
+          <firstname>Steven</firstname>
+        <title>Proceedings of the IRCS Workshop on Linguistic
+        Databases</title>
+      <subtitle>11-13 December 2001</subtitle>
+      <date>2001</date>
+      <publisher>
+          <publishername>Institute for Reasearch in Cognitive Science,
+          University of Pennsylvania</publishername>
+          <address><city>Philadelphia</city></address>
+      </publisher>
+    </biblioentry>
+
+    <biblioentry>
+        <author><surname>Nerbonne</surname>
+          <firstname>John</firstname></author>
+        <title>Linguistic Database</title>
+      <date>1997</date>
+      <publisher>
+          <publishername>CSLI</publishername>
+          <address><city>Stanford</city></address>
+      </publisher>
+    </biblioentry>
+
+
+    <biblioentry>
+        <author><surname>Rossum</surname>
+          <firstname>Guido van</firstname>
+        <title>Python Tutorial</title>
+      <subtitle><ulink url="http://www.python.org/doc/current/tut/tut.html">http://www.python.org/doc/current/tut/tut.html</ulink></subtitle>
+      <date>2002</date>
+      <publisher>
+          <publishername>)Pythonlabs</publishername>
+      </publisher>
+    </biblioentry>
+
+
+  </bibliography>
+
+
+</book>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-general-insert-case:lower
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+sgml-default-dtd-file:"./book.ced"
+End:
+-->

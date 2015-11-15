@@ -1,0 +1,19 @@
+This version of Kura has the following requirements:
+
+Unix/X11 (Kura can run on windows, but you need to buy a commercical
+license of PyQt for that).
+
+Python >= 2.1				http://www.python.org
+PyQt >= 3.4.2 (required sip >= 3.4.1)	http://www.riverbankcomputing.co.uk
+
+Optionally, if you want to use the multi-user database backend to store
+your data, you need:
+
+MySQL >= 3.23				http://www.mysql.org
+MySQL-python >= 0.9.1			http://sourceforge.net/projects/mysql-python/
+
+If you want to use the grammar project to create docbook grammars that
+can be used to generate html or pdf documents, you must satisfy additional
+requirements. Please see the documentation in that project.
+
+					

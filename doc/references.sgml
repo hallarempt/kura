@@ -1,0 +1,3318 @@
+<refentry id="lng_affiliationcode">
+      <refmeta>
+        <refentrytitle>lng_affiliationcode</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_affiliationcode</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Code table with a textual primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>affc</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>affiliationcode</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>affiliationcode, description, institution, url</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>url</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>affiliationcode</entry><entry>None</entry></row>
+<row><entry>institution</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>affiliationcode</entry>
+        <entry>affiliationcode</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+    </refentry>
+
+<refentry id="lng_categorycode">
+      <refmeta>
+        <refentrytitle>lng_categorycode</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_categorycode</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>catc</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>categorycode</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>categorycode, description</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>categorycode</entry><entry>None</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_reference">lng_reference</link></entry>
+        <entry>categorycode</entry>
+        <entry>main_categorycode</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_reference">lng_reference</link></entry>
+        <entry>categorycode</entry>
+        <entry>sub_categorycode</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+    </refentry>
+
+<refentry id="lng_doc_doc">
+      <refmeta>
+        <refentrytitle>lng_doc_doc</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_doc_doc</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>dcdc</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>docdocnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>docdocnr, documentnr_1, title_1, documentnr_2, title_2, linkcode, link, description</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>docdocnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>documentnr_2</entry><entry>None</entry></row>
+<row><entry>documentnr_1</entry><entry>None</entry></row>
+<row><entry>link</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>description</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>title_1</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>title_2</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>linkcode</entry><entry>None</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>dcdc_doc1</entry>
+        <entry>documentnr_1, documentnr</entry>
+        <entry>title_1, title</entry>
+        <entry><link linkend="lng_document">lng_document</link></entry>
+        <entry>doc1</entry>
+     </row>
+     <row>
+        <entry>dcdc_doc2</entry>
+        <entry>documentnr_2, documentnr</entry>
+        <entry>title_2, title</entry>
+        <entry><link linkend="lng_document">lng_document</link></entry>
+        <entry>doc2</entry>
+     </row>
+     <row>
+        <entry>dcdc_lnkc</entry>
+        <entry>linkcode, linkcode</entry>
+        <entry>link, description</entry>
+        <entry><link linkend="lng_linkcode">lng_linkcode</link></entry>
+        <entry>lnkc</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_document">
+      <refmeta>
+        <refentrytitle>lng_document</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_document</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>doc</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>documentnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>documentnr, title, description, url, creation_date, usernr, user</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>title</entry><entry>None</entry></row>
+<row><entry>url</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>documentnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>creation_date</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_doc_doc">lng_doc_doc</link></entry>
+        <entry>documentnr</entry>
+        <entry>documentnr_1</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_doc_doc">lng_doc_doc</link></entry>
+        <entry>documentnr</entry>
+        <entry>documentnr_1</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>doc_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_element">
+      <refmeta>
+        <refentrytitle>lng_element</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_element</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Numeric primary key and a sequential counter</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>elmt</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>elementnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>streamnr</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>text</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>elementnr, text, elementtypecode, elementtype, streamnr, stream, seqnr, languagenr, language, parent_elementnr, parent_element, lexnr, lexeme, usernr, user, datestamp</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>streamnr, languagenr, seqnr, parent_elementnr, lexnr</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>parent_elementnr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>stream</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>language</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>text</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>lexnr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>parent_element</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>streamnr</entry><entry>None</entry></row>
+<row><entry>lexeme</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>datestamp</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>seqnr</entry><entry>Integer, 10 (seq)</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>elementnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>elementtypecode</entry><entry>None</entry></row>
+<row><entry>languagenr</entry><entry>None</entry></row>
+<row><entry>elementtype</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_element_tag">lng_element_tag</link></entry>
+        <entry>elementnr</entry>
+        <entry>elementnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element">lng_element</link></entry>
+        <entry>elementnr</entry>
+        <entry>parent_elementnr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>elmt_lex</entry>
+        <entry>lexnr, lexnr</entry>
+        <entry>lexeme, glosse</entry>
+        <entry><link linkend="lng_lex">lng_lex</link></entry>
+        <entry>lex</entry>
+     </row>
+     <row>
+        <entry>elmt_strm</entry>
+        <entry>streamnr, streamnr</entry>
+        <entry>stream, text</entry>
+        <entry><link linkend="lng_stream">lng_stream</link></entry>
+        <entry>strm</entry>
+     </row>
+     <row>
+        <entry>elmt_elmt</entry>
+        <entry>parent_elementnr, elementnr</entry>
+        <entry>parent_element, text</entry>
+        <entry><link linkend="lng_element">lng_element</link></entry>
+        <entry>elmt2</entry>
+     </row>
+     <row>
+        <entry>elmt_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+     <row>
+        <entry>elmt_lngg</entry>
+        <entry>languagenr, languagenr</entry>
+        <entry>language, language</entry>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>lngg</entry>
+     </row>
+     <row>
+        <entry>elmt_eltc</entry>
+        <entry>elementtypecode, elementtypecode</entry>
+        <entry>elementtype, description</entry>
+        <entry><link linkend="lng_elementtypecode">lng_elementtypecode</link></entry>
+        <entry>eltc</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_element_tag">
+      <refmeta>
+        <refentrytitle>lng_element_tag</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_element_tag</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>eltg</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>element_tagnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>tagname</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>element_tagnr, elementnr, tag, element, tagname, value, description, note, usernr, user, datestamp</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>elementnr, tag</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>String, 200 (null allowed)</entry></row>
+<row><entry>value</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>element</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>note</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>element_tagnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>tag</entry><entry>None</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>tagname</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>datestamp</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>elementnr</entry><entry>None</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>eltg_elmt</entry>
+        <entry>elementnr, elementnr</entry>
+        <entry>element, text</entry>
+        <entry><link linkend="lng_element">lng_element</link></entry>
+        <entry>elmt</entry>
+     </row>
+     <row>
+        <entry>eltg_tag</entry>
+        <entry>tag, tag</entry>
+        <entry>tagname, name</entry>
+        <entry><link linkend="lng_tag">lng_tag</link></entry>
+        <entry>tag</entry>
+     </row>
+     <row>
+        <entry>eltg_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_elementtypecode">
+      <refmeta>
+        <refentrytitle>lng_elementtypecode</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_elementtypecode</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Code table with a textual primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>eltc</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>elementtypecode</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>elementtypecode, description, parent_elementtypecode, parent_elementtype, splitmarker, joinmarker</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>joinmarker</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>elementtypecode</entry><entry>None</entry></row>
+<row><entry>parent_elementtypecode</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>parent_elementtype</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>splitmarker</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_elementtypecode">lng_elementtypecode</link></entry>
+        <entry>elementtypecode</entry>
+        <entry>parent_elementtypecode</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element">lng_element</link></entry>
+        <entry>elementtypecode</entry>
+        <entry>elementtypecode</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>eltc_eltc</entry>
+        <entry>parent_elementtypecode, elementtypecode</entry>
+        <entry>parent_elementtype, description</entry>
+        <entry><link linkend="lng_elementtypecode">lng_elementtypecode</link></entry>
+        <entry>eltc2</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_language">
+      <refmeta>
+        <refentrytitle>lng_language</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_language</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Recursive table with a numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>lngg</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>languagenr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>language</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>languagenr, language, description, parent_languagenr, parent_language, documentroot, title</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>parent_languagenr</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>parent_languagenr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>language</entry><entry>None</entry></row>
+<row><entry>documentroot</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>languagenr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>title</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>parent_language</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_lex">lng_lex</link></entry>
+        <entry>languagenr</entry>
+        <entry>languagenr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_recording">lng_recording</link></entry>
+        <entry>languagenr</entry>
+        <entry>languagenr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element">lng_element</link></entry>
+        <entry>languagenr</entry>
+        <entry>languagenr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_stream">lng_stream</link></entry>
+        <entry>languagenr</entry>
+        <entry>languagenr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_text">lng_text</link></entry>
+        <entry>languagenr</entry>
+        <entry>languagenr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_proj_lngg">lng_proj_lngg</link></entry>
+        <entry>languagenr</entry>
+        <entry>languagenr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_scan">lng_scan</link></entry>
+        <entry>languagenr</entry>
+        <entry>languagenr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>languagenr</entry>
+        <entry>parent_languagenr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>lngg_lngg</entry>
+        <entry>parent_languagenr, languagenr</entry>
+        <entry>parent_language, language</entry>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>lngg2</entry>
+     </row>
+     <row>
+        <entry>lngg_doc</entry>
+        <entry>documentroot, documentnr</entry>
+        <entry>title, title</entry>
+        <entry><link linkend="lng_document">lng_document</link></entry>
+        <entry>doc</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_lex">
+      <refmeta>
+        <refentrytitle>lng_lex</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_lex</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>lex</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>lexnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>form</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>lexnr, form, glosse, description, phonetic_form, alternative_form, languagenr, language, isdone, usernr, user, datestamp</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>languagenr, glosse, form</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>language</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>phonetic_form</entry><entry>String, 100 (null allowed)</entry></row>
+<row><entry>glosse</entry><entry>None</entry></row>
+<row><entry>lexnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>languagenr</entry><entry>None</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>form</entry><entry>None</entry></row>
+<row><entry>datestamp</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>alternative_form</entry><entry>String, 50 (null allowed)</entry></row>
+<row><entry>isdone</entry><entry>Boolean, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_lex_tag">lng_lex_tag</link></entry>
+        <entry>lexnr</entry>
+        <entry>lexnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_lex_lex">lng_lex_lex</link></entry>
+        <entry>lexnr</entry>
+        <entry>lexnr_1</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element">lng_element</link></entry>
+        <entry>lexnr</entry>
+        <entry>lexnr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>lex_lngg</entry>
+        <entry>languagenr, languagenr</entry>
+        <entry>language, language</entry>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>lngg</entry>
+     </row>
+     <row>
+        <entry>lex_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_lex_lex">
+      <refmeta>
+        <refentrytitle>lng_lex_lex</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_lex_lex</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>lxlx</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>lxlxnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>form_1, form_2, relation</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>lxlxnr, lexnr_1, form_1, lexnr_2, form_2, lxlxrelcode, relation, usernr, note, user, datestamp</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>lexnr_1, lexnr_2</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>lexnr_1</entry><entry>None</entry></row>
+<row><entry>lxlxrelcode</entry><entry>None</entry></row>
+<row><entry>lexnr_2</entry><entry>None</entry></row>
+<row><entry>lxlxnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>note</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>relation</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>datestamp</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>form_1</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>form_2</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>lxlx_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+     <row>
+        <entry>lxlx_lex1</entry>
+        <entry>lexnr_1, lexnr</entry>
+        <entry>form_1, form</entry>
+        <entry><link linkend="lng_lex">lng_lex</link></entry>
+        <entry>lex1</entry>
+     </row>
+     <row>
+        <entry>lxlx_lex2</entry>
+        <entry>lexnr_2, lexnr</entry>
+        <entry>form_2, form</entry>
+        <entry><link linkend="lng_lex">lng_lex</link></entry>
+        <entry>lex2</entry>
+     </row>
+     <row>
+        <entry>lxlx_lxrl</entry>
+        <entry>lxlxrelcode, lxlxrelcode</entry>
+        <entry>relation, description</entry>
+        <entry><link linkend="lng_lxlxrelcode">lng_lxlxrelcode</link></entry>
+        <entry>lxrl</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_lex_tag">
+      <refmeta>
+        <refentrytitle>lng_lex_tag</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_lex_tag</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>lxtg</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>lex_tagnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>tagname</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>lex_tagnr, lexnr, tag, lexeme, tagname, value, description, note, usernr, datestamp</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>lexnr, tag</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>note</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>String, 200 (null allowed)</entry></row>
+<row><entry>lexnr</entry><entry>None</entry></row>
+<row><entry>value</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>lexeme</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>tag</entry><entry>None</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>tagname</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>datestamp</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>lex_tagnr</entry><entry>Integer, 10 (pk)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>lxtg_lex</entry>
+        <entry>lexnr, lexnr</entry>
+        <entry>lexeme, form</entry>
+        <entry><link linkend="lng_lex">lng_lex</link></entry>
+        <entry>lex</entry>
+     </row>
+     <row>
+        <entry>lxtg_tag</entry>
+        <entry>tag, tag</entry>
+        <entry>tagname, name</entry>
+        <entry><link linkend="lng_tag">lng_tag</link></entry>
+        <entry>tag</entry>
+     </row>
+     <row>
+        <entry>lxtg_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_linkcode">
+      <refmeta>
+        <refentrytitle>lng_linkcode</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_linkcode</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Code table with a textual primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>lnkc</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>linkcode</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>linkcode, description</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>linkcode</entry><entry>None</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_doc_doc">lng_doc_doc</link></entry>
+        <entry>linkcode</entry>
+        <entry>linkcode</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+    </refentry>
+
+<refentry id="lng_lxlxrelcode">
+      <refmeta>
+        <refentrytitle>lng_lxlxrelcode</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_lxlxrelcode</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Code table with a textual primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>lxrl</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>lxlxrelcode</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>lxlxrelcode, description</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>lxlxrelcode</entry><entry>None</entry></row>
+<row><entry>description</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_lex_lex">lng_lex_lex</link></entry>
+        <entry>lxlxreclode</entry>
+        <entry>lxlxrelcode</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+    </refentry>
+
+<refentry id="lng_proj_lngg">
+      <refmeta>
+        <refentrytitle>lng_proj_lngg</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_proj_lngg</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>prln</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>prlnnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>project, language</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>project, projectnr, languagenr, language, prlnnr</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>languagenr</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>project</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>projectnr</entry><entry>None</entry></row>
+<row><entry>languagenr</entry><entry>None</entry></row>
+<row><entry>language</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>prlnnr</entry><entry>Integer, 10 (pk)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>prln_project</entry>
+        <entry>projectnr, projectnr</entry>
+        <entry>project, description</entry>
+        <entry><link linkend="lng_project">lng_project</link></entry>
+        <entry>proj</entry>
+     </row>
+     <row>
+        <entry>prln_lngg</entry>
+        <entry>languagenr, languagenr</entry>
+        <entry>language, language</entry>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>lngg</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_proj_text">
+      <refmeta>
+        <refentrytitle>lng_proj_text</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_proj_text</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>prtx</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>prtxnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>project, text</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>prtxnr, projectnr, project, textnr, text</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>projectnr, textnr</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>prtxnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>project</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>projectnr</entry><entry>None</entry></row>
+<row><entry>text</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>textnr</entry><entry>None</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>prtx_proj</entry>
+        <entry>projectnr, projectnr</entry>
+        <entry>project, description</entry>
+        <entry><link linkend="lng_project">lng_project</link></entry>
+        <entry>proj</entry>
+     </row>
+     <row>
+        <entry>prtx_text</entry>
+        <entry>textnr, textnr</entry>
+        <entry>text, title</entry>
+        <entry><link linkend="lng_text">lng_text</link></entry>
+        <entry>text</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_proj_user">
+      <refmeta>
+        <refentrytitle>lng_proj_user</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_proj_user</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>prus</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>prusnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>project, user</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>prusnr, projectnr, project, usernr, user</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>project</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>projectnr</entry><entry>None</entry></row>
+<row><entry>usernr</entry><entry>None</entry></row>
+<row><entry>prusnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>prus_proj</entry>
+        <entry>projectnr, projectnr</entry>
+        <entry>project, description</entry>
+        <entry><link linkend="lng_project">lng_project</link></entry>
+        <entry>proj</entry>
+     </row>
+     <row>
+        <entry>prus_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_project">
+      <refmeta>
+        <refentrytitle>lng_project</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_project</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>proj</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>projectnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry>
+Projects
+
+A project is a basic unit of research in Kura.
+</entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>projectnr, description, summary, url, documentroot, title, grants</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>grants</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>title</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>url</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>projectnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>documentroot</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>summary</entry><entry>Text, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_recording">lng_recording</link></entry>
+        <entry>projectnr</entry>
+        <entry>projectnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_proj_lngg">lng_proj_lngg</link></entry>
+        <entry>projectnr</entry>
+        <entry>projectnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_proj_text">lng_proj_text</link></entry>
+        <entry>projectnr</entry>
+        <entry>projectnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_proj_user">lng_proj_user</link></entry>
+        <entry>projectnr</entry>
+        <entry>projectnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_scan">lng_scan</link></entry>
+        <entry>projectnr</entry>
+        <entry>projectnr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>proj_doc</entry>
+        <entry>documentroot, documentnr</entry>
+        <entry>title, title</entry>
+        <entry><link linkend="lng_document">lng_document</link></entry>
+        <entry>doc</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_recording">
+      <refmeta>
+        <refentrytitle>lng_recording</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_recording</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>recd</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>recordingnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>recordingnr, title, url, source, tapenr, tape_location, informant, duration, recording_date, languagenr, language, projectnr, project, description, usernr, user</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>languagenr, projectnr</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>language</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>recording_date</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>title</entry><entry>None</entry></row>
+<row><entry>url</entry><entry>None</entry></row>
+<row><entry>tapenr</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>project</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>source</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>languagenr</entry><entry>None</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>recordingnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>tape_location</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>duration</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>projectnr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>informant</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_text">lng_text</link></entry>
+        <entry>recordingnr</entry>
+        <entry>recordingnr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>recd_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+     <row>
+        <entry>recd_lngg</entry>
+        <entry>languagenr, languagenr</entry>
+        <entry>language, language</entry>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>lngg</entry>
+     </row>
+     <row>
+        <entry>recd_proj</entry>
+        <entry>projectnr, projectnr</entry>
+        <entry>project, description</entry>
+        <entry><link linkend="lng_project">lng_project</link></entry>
+        <entry>proj</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_reference">
+      <refmeta>
+        <refentrytitle>lng_reference</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_reference</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>refs</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>referencenr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>title, author</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>referencenr, author, year, abbrev, title, periodical, place, publisher, catalogue_card, series, volume, pages, note, main_categorycode, main_category, sub_categorycode, sub_category</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>author, abbrev, title</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>volume</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>note</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>sub_category</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>sub_categorycode</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>author</entry><entry>None</entry></row>
+<row><entry>main_categorycode</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>series</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>title</entry><entry>None</entry></row>
+<row><entry>publisher</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>referencenr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>main_category</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>abbrev</entry><entry>String, 25 (null allowed)</entry></row>
+<row><entry>place</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>periodical</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>year</entry><entry>None</entry></row>
+<row><entry>pages</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>catalogue_card</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>refs_catc1</entry>
+        <entry>main_categorycode, categorycode</entry>
+        <entry>main_category, description</entry>
+        <entry><link linkend="lng_categorycode">lng_categorycode</link></entry>
+        <entry>catc1</entry>
+     </row>
+     <row>
+        <entry>refs_catc2</entry>
+        <entry>sub_categorycode, categorycode</entry>
+        <entry>sub_category, description</entry>
+        <entry><link linkend="lng_categorycode">lng_categorycode</link></entry>
+        <entry>catc2</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_scan">
+      <refmeta>
+        <refentrytitle>lng_scan</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_scan</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>scan</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>scannr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>title, scan_date</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>scannr, title, url, manuscript_location, page, scan_date, size, description, languagenr, language, projectnr, project, usernr, user</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>languagenr, projectnr</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>scannr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>language</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>title</entry><entry>None</entry></row>
+<row><entry>url</entry><entry>None</entry></row>
+<row><entry>scan_date</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>manuscript_location</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>project</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>languagenr</entry><entry>None</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>projectnr</entry><entry>None</entry></row>
+<row><entry>page</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>size</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_text">lng_text</link></entry>
+        <entry>scannr</entry>
+        <entry>scannr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>scan_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+     <row>
+        <entry>scan_lngg</entry>
+        <entry>languagenr, languagenr</entry>
+        <entry>language, language</entry>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>lngg</entry>
+     </row>
+     <row>
+        <entry>scan_proj</entry>
+        <entry>projectnr, projectnr</entry>
+        <entry>project, description</entry>
+        <entry><link linkend="lng_project">lng_project</link></entry>
+        <entry>proj</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_stream">
+      <refmeta>
+        <refentrytitle>lng_stream</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_stream</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Numeric primary key and a sequential counter</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>strm</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>streamnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>textnr</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>text</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>streamnr, textnr, title, text, seqnr, languagenr, language, usernr, user, datestamp</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>textnr, languagenr, seqnr</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>streamnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>languagenr</entry><entry>None</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>language</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>title</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>datestamp</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>text</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>seqnr</entry><entry>Integer, 10 (seq)</entry></row>
+<row><entry>textnr</entry><entry>None</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_stream_tag">lng_stream_tag</link></entry>
+        <entry>streamnr</entry>
+        <entry>streamnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element">lng_element</link></entry>
+        <entry>streamnr</entry>
+        <entry>streamnr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>strm_text</entry>
+        <entry>textnr, textnr</entry>
+        <entry>title, title</entry>
+        <entry><link linkend="lng_text">lng_text</link></entry>
+        <entry>text</entry>
+     </row>
+     <row>
+        <entry>strm_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+     <row>
+        <entry>strm_lngg</entry>
+        <entry>languagenr, languagenr</entry>
+        <entry>language, language</entry>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>lngg</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_stream_tag">
+      <refmeta>
+        <refentrytitle>lng_stream_tag</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_stream_tag</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>sttg</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>stream_tagnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>tagname</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>stream_tagnr, streamnr, tag, stream, tagname, value, description, note, usernr, user, datestamp</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>streamnr, tag</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>stream_tagnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>note</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>stream</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>value</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>streamnr</entry><entry>None</entry></row>
+<row><entry>tag</entry><entry>None</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>tagname</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>datestamp</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>description</entry><entry>String, 200 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>sttg_strrm</entry>
+        <entry>streamnr, streamnr</entry>
+        <entry>stream, text</entry>
+        <entry><link linkend="lng_stream">lng_stream</link></entry>
+        <entry>strm</entry>
+     </row>
+     <row>
+        <entry>sttg_tag</entry>
+        <entry>tag, tag</entry>
+        <entry>tagname, name</entry>
+        <entry><link linkend="lng_tag">lng_tag</link></entry>
+        <entry>tag</entry>
+     </row>
+     <row>
+        <entry>sttg_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_tag">
+      <refmeta>
+        <refentrytitle>lng_tag</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_tag</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Code table with a textual primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>tag</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>tag</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>name</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>tag, name, description, tagtypecode, tagtype, text, stream, element, lexeme</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>lexeme</entry><entry>Boolean, 255 (null allowed)</entry></row>
+<row><entry>tag</entry><entry>None</entry></row>
+<row><entry>tagtypecode</entry><entry>None</entry></row>
+<row><entry>name</entry><entry>None</entry></row>
+<row><entry>stream</entry><entry>Boolean, 255 (null allowed)</entry></row>
+<row><entry>text</entry><entry>Boolean, 255 (null allowed)</entry></row>
+<row><entry>description</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>element</entry><entry>Boolean, 255 (null allowed)</entry></row>
+<row><entry>tagtype</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_text_tag">lng_text_tag</link></entry>
+        <entry>tag</entry>
+        <entry>tag</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_lex_tag">lng_lex_tag</link></entry>
+        <entry>tag</entry>
+        <entry>tag</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element_tag">lng_element_tag</link></entry>
+        <entry>tag</entry>
+        <entry>tag</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_stream_tag">lng_stream_tag</link></entry>
+        <entry>tag</entry>
+        <entry>tag</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>tag_ttpc</entry>
+        <entry>tagtypecode, tagtypecode</entry>
+        <entry>tagtype, description</entry>
+        <entry><link linkend="lng_tagtypecode">lng_tagtypecode</link></entry>
+        <entry>ttpc</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_tagdomain">
+      <refmeta>
+        <refentrytitle>lng_tagdomain</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_tagdomain</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>tdmn</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>domainnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry>
+Tag domains
+
+The items you define here form the set of choices you are presented with when
+you want to add a tag with some value to an item. For instance, if you want
+to label a word in a phrase with a part of speech, you can define here all 
+possible parts of speech.
+
+When labelling the word, you will then be able to choose from the possibilities
+defined here.                     
+</entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>domainnr, tag, tagname, abbreviation, description</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>abbreviation</entry><entry>None</entry></row>
+<row><entry>tag</entry><entry>None</entry></row>
+<row><entry>domainnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>tagname</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_text_tag">lng_text_tag</link></entry>
+        <entry>domainnr</entry>
+        <entry>domainnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_lex_tag">lng_lex_tag</link></entry>
+        <entry>domainnr</entry>
+        <entry>domainnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element_tag">lng_element_tag</link></entry>
+        <entry>domainnr</entry>
+        <entry>domainnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_stream_tag">lng_stream_tag</link></entry>
+        <entry>domainnr</entry>
+        <entry>domainnr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>tdmn_tag</entry>
+        <entry>tag, tag</entry>
+        <entry>tagname, name</entry>
+        <entry><link linkend="lng_tag">lng_tag</link></entry>
+        <entry>tag</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_tagtypecode">
+      <refmeta>
+        <refentrytitle>lng_tagtypecode</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_tagtypecode</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>Code table with a textual primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>ttpc</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>tagtypecode</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>description</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>tagtypecode, description, isdomain, isvalue, isnote, isreference</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>isdomain</entry><entry>Boolean, 255 (null allowed)</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>isvalue</entry><entry>Boolean, 255 (null allowed)</entry></row>
+<row><entry>tagtypecode</entry><entry>None</entry></row>
+<row><entry>isnote</entry><entry>Boolean, 255 (null allowed)</entry></row>
+<row><entry>isreference</entry><entry>Boolean, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_tag">lng_tag</link></entry>
+        <entry>tagtypecode</entry>
+        <entry>tagtypecode</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+    </refentry>
+
+<refentry id="lng_text">
+      <refmeta>
+        <refentrytitle>lng_text</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_text</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>text</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>textnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>title</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>textnr, title, recordingnr, recording, scannr, scan, description, url, usernr, user, transcription_date, raw_text, languagenr, language</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>languagenr</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>scannr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>None</entry></row>
+<row><entry>language</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>scan</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>url</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>title</entry><entry>None</entry></row>
+<row><entry>textnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>recording</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>languagenr</entry><entry>None</entry></row>
+<row><entry>transcription_date</entry><entry>Date/time, 255 (null allowed)</entry></row>
+<row><entry>recordingnr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>raw_text</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_proj_text">lng_proj_text</link></entry>
+        <entry>textnr</entry>
+        <entry>textnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_text_tag">lng_text_tag</link></entry>
+        <entry>textnr</entry>
+        <entry>textnr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_stream">lng_stream</link></entry>
+        <entry>textnr</entry>
+        <entry>textnr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>text_recd</entry>
+        <entry>recordingnr, recordingnr</entry>
+        <entry>recording, title</entry>
+        <entry><link linkend="lng_recording">lng_recording</link></entry>
+        <entry>recd</entry>
+     </row>
+     <row>
+        <entry>text_scan</entry>
+        <entry>scannr, scannr</entry>
+        <entry>scan, description</entry>
+        <entry><link linkend="lng_scan">lng_scan</link></entry>
+        <entry>scan</entry>
+     </row>
+     <row>
+        <entry>text_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+     <row>
+        <entry>text_lngg</entry>
+        <entry>languagenr, languagenr</entry>
+        <entry>language, language</entry>
+        <entry><link linkend="lng_language">lng_language</link></entry>
+        <entry>lngg</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_text_tag">
+      <refmeta>
+        <refentrytitle>lng_text_tag</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_text_tag</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>txtg</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>text_tagnr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>tagname</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>text_tagnr, textnr, tag, title, tagname, value, description, note, usernr, user, datestamp</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry>textnr, tag</entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>usernr</entry><entry>Integer, 10 (null allowed)</entry></row>
+<row><entry>description</entry><entry>String, 200 (null allowed)</entry></row>
+<row><entry>title</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>text_tagnr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>value</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>textnr</entry><entry>None</entry></row>
+<row><entry>note</entry><entry>Text, 255 (null allowed)</entry></row>
+<row><entry>tag</entry><entry>None</entry></row>
+<row><entry>user</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>tagname</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>datestamp</entry><entry>Date/time, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>txtg_text</entry>
+        <entry>textnr, textnr</entry>
+        <entry>title, title</entry>
+        <entry><link linkend="lng_text">lng_text</link></entry>
+        <entry>text</entry>
+     </row>
+     <row>
+        <entry>txtx_tag</entry>
+        <entry>tag, tag</entry>
+        <entry>tagname, name</entry>
+        <entry><link linkend="lng_tag">lng_tag</link></entry>
+        <entry>tag</entry>
+     </row>
+     <row>
+        <entry>txtg_user</entry>
+        <entry>usernr, usernr</entry>
+        <entry>user, name</entry>
+        <entry><link linkend="lng_user">lng_user</link></entry>
+        <entry>user</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+
+<refentry id="lng_user">
+      <refmeta>
+        <refentrytitle>lng_user</refentrytitle>
+      </refmeta>
+      <refnamediv>
+        <refname>lng_user</refname>
+        <refpurpose></refpurpose>
+      </refnamediv>
+      <refsect1>
+        <title>Attributes</title>
+
+        <informaltable>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Table type</entry>
+                <entry>numeric primary key</entry>
+              </row>
+              <row>
+                <entry>Table alias</entry>
+                <entry>user</entry>
+              </row>
+              <row>
+                <entry>Primary key field</entry>
+                <entry>usernr</entry>
+              </row>
+              <row>
+                <entry>Sequence field</entry>
+                <entry>None</entry>
+              </row>
+              <row>
+                <entry>Hint</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Table described by</entry>
+                <entry>name, email</entry>
+              </row>
+              <row>
+                <entry>Fieldorder</entry>
+                <entry>usernr, name, affiliationcode, affiliation, email, snailmail, fax, telephone, url</entry>
+              </row>
+              <row>
+                <entry>Indexes</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>Unique Indexes</entry>
+                <entry></entry>
+              </row>
+              
+           </tbody>
+          </tgroup>
+        </informaltable>
+
+      <refsect1><title>Fields</title>
+        
+        <informaltable>
+           <tgroup cols="2">
+              <thead>
+                 <row><entry>Fieldname</entry><entry>Field definition</entry></row>
+              </thead>
+              <tbody>
+<row><entry>affiliation</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>fax</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>usernr</entry><entry>Integer, 10 (pk)</entry></row>
+<row><entry>name</entry><entry>None</entry></row>
+<row><entry>title</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>telephone</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>url</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>email</entry><entry>String, 255 (null allowed)</entry></row>
+<row><entry>affiliationcode</entry><entry>String, 5 (null allowed)</entry></row>
+<row><entry>snailmail</entry><entry>String, 255 (null allowed)</entry></row>
+</tbody></informaltable>
+      </refsect1>
+      <refsect1><title>Lookup tables (parents)</title>
+   <informaltable><tgroup cols="3">
+    <thead>
+    <row>
+      <entry>Childtable</entry>
+      <entry>Local key</entry>
+      <entry>Foreign key</entry>
+    </row>
+    <tbody>
+     <row>
+        <entry><link linkend="lng_lex">lng_lex</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_text_tag">lng_text_tag</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_stream_tag">lng_stream_tag</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_proj_user">lng_proj_user</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_stream">lng_stream</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_scan">lng_scan</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_lex_lex">lng_lex_lex</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_recording">lng_recording</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_lex_tag">lng_lex_tag</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element_tag">lng_element_tag</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_document">lng_document</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_element">lng_element</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+     <row>
+        <entry><link linkend="lng_text">lng_text</link></entry>
+        <entry>usernr</entry>
+        <entry>usernr</entry>
+      </row>
+</tbody></tgroup></informaltable>
+    </refsect1>
+      
+       <refsect1><title>Lookup tables (parents)</title>
+          <informaltable><tgroup cols="5">
+    <thead>
+    <row>
+      <entry>Name</entry>
+      <entry>Keypair</entry>
+      <entry>Descriptors</entry>
+      <entry>Related table</entry>
+      <entry>Related alias</entry></row>
+    <tbody>
+     <row>
+        <entry>user_affc</entry>
+        <entry>affiliationcode, affiliationcode</entry>
+        <entry>affiliation, description</entry>
+        <entry><link linkend="lng_affiliationcode">lng_affiliationcode</link></entry>
+        <entry>affc</entry>
+     </row>
+</tbody></tgroup></informaltable></refsect1>
+
+    </refentry>
+

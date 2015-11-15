@@ -1,0 +1,17 @@
+Begin3
+Title:          Kura 
+Version:        2.0
+Entered-date:   
+Description:    Kura, the linguistics database
+Keywords:       KDE, X11, Qt, Python, MySQL, linguistics, interlinear text
+Author:         Boudewijn Rempt <boud@valdyas.org> 
+Maintained-by:  Boudewijn Rempt <boud@valdyas.org> 
+Primary-site:   http://www.valdyas.org/linguistics/index.html	        
+Home-page:      http://www.valdyas.org/linguistics/index.html
+Original-site:  http://www.valdyas.org/linguistics/index.html
+Platforms:      Linux and other Unices, needs Python, Qt, 
+                PyQt. Optionally MySQL and MySQLdb
+Copying-policy: GNU Public License
+End
+
+

@@ -1,0 +1,3596 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+<html>
+ <meta name="author" content="Boudewijn Rempt">
+ <meta name="copyright" content="1999 Boudewijn Rempt">
+ <meta name="generator" content="Nedit!">
+ <head>
+  <title>
+Kura, the multi-user linguistics database - datamodel
+  </title>
+ </head>
+<body BGCOLOR="linen">
+
+<p align=center><a href="../index.html">Home</a> -
+<a href="./index.html">Kura</a> -
+<a href="./proposal.html">Proposal</a>
+</p>
+<hr>
+
+
+<P><DIV ALIGN=LEFT>
+<h1>Kura, the Linguistics Database - datamodel</h1>
+</DIV></P>
+<P><DIV ALIGN=LEFT><TABLE BORDER=1><TD>
+<B> Project Name:</B>
+ Kura
+<BR><B> Project Code:</B>
+ Kura
+<BR><B> Name:</B>
+ Kura Conceptual Datamodel
+<BR><B> Code:</B>
+ Kura_Conceptual_Datamodel
+<BR><B> Label:</B>
+ Kura Conceptual Data Model
+<BR><B> Author:</B>
+ Boudewijn Rempt
+<BR><B> Version:</B>
+ 0.0.3
+<BR><B> Created On:</B>
+ 3-11-99  10:04
+<B> Modified On:</B>
+ 3-11-99  14:26
+</TABLE></DIV></P>
+<P>
+</P>
+<IMG SRC="data0000.jpg"><P><DIV ALIGN=LEFT>
+<B>Entity List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_affiliationcode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_affiliationcode
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_categorycode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_categorycode
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_element
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_element_tag
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element_tag
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_language
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_lex
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_lex_lex
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex_lex
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_lex_tag
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex_tag
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_parametersys
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_parametersys
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_project
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_project
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_recording
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_recording
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_reference
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_reference
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_scan
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_scan
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_stream
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_stream_tag
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream_tag
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_tag
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_tag
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_tagtypecode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_tagtypecode
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_text
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_text_tag
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text_tag
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_user
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_affiliationcode</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+List of affiliations of the users of Kura.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+affiliationcode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+affiliationcode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA5
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+institution
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+institution
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_user_affc(fk_user_affc)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_categorycode</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Categories of references works.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+categorycode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+categorycode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_refs_catc_1(fk_refs_catc_1)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_reference(lng_reference)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_refs_catc_2(fk_refs_catc_2)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_reference(lng_reference)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_element</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Analyzed part of speech - a word, a morpheme, a phrase, perhaps even a phoneme.<BR>Recusively decomposable:<BR><BR>element 1 eseri glosse: 'your'<BR>element 1.1 e- POSS (possessive prefix)<BR>element 1.2 seri 2smHGH (second person masculine high grade honorific)
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+elementnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+elementnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+seqnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+seqnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N5
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+text
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+text
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_elmt(fk_elmt_elmt)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element(lng_element)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_lex(fk_elmt_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex(lng_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_lngg(fk_elmt_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language(lng_language)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_strm(fk_elmt_strm)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream(lng_stream)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_user(fk_elmt_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_eltg_elmt(fk_eltg_elmt)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element_tag(lng_element_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_element_tag</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Information about an element, such as a glosse, a translation, a note.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA200
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_eltg_elmt(fk_eltg_elmt)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element(lng_element)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_eltg_tag(fk_eltg_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_tag(lng_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_eltg_user(fk_eltg_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_language</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+List of languages used in this database
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+languagenr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+languagenr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+language
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+language
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_lngg(fk_elmt_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element(lng_element)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lex_lngg(fk_lex_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex(lng_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lngg_lngg(fk_lngg_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language(lng_language)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_recd_lngg(fk_recd_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_recording(lng_recording)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_scan_lngg(fk_scan_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_scan(lng_scan)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_strm_lngg(fk_strm_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream(lng_stream)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_text_lngg(fk_text_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text(lng_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_proj_lngg(lng_proj_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_project(lng_project)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_lex</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Entries in the lexicons of the languages present in the database.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+lexnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lexnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+form
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+form
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+phonetic_form
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+phonetic_form
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+glosse
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+glosse
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_lex(fk_elmt_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element(lng_element)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lex_lngg(fk_lex_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language(lng_language)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lex_user(fk_lex_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxlx_lex_1(fk_lxlx_lex_1)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex_lex(lng_lex_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxlx_lex_2(fk_lxlx_lex_2)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex_lex(lng_lex_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxtg_lex(fk_lxtg_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex_tag(lng_lex_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_lex_lex</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Allofamic relations between lexical items
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxlx_lex_1(fk_lxlx_lex_1)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex(lng_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxlx_lex_2(fk_lxlx_lex_2)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex(lng_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxlx_user(fk_lxlx_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_lex_tag</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Annotations to lexemes
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA200
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxtg_lex(fk_lxtg_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex(lng_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxtg_tag(fk_lxtg_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_tag(lng_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxtg_user(fk_lxtg_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_parametersys</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+System-wide parameters
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+parametersys
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+parametersys
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_project</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Projects order data into conceptual entities, like 'A Grammar of Denden', or 'Second person pronouns in Valdyan'. A project can span more than one language. More than one user can work on a project. A project can be supported by grants and have a homepage where the results of the project can be published to.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+projectnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+projectnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+summary
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+summary
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+grants
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+grants
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_recd_proj(fk_recd_proj)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_recording(lng_recording)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_scan_proj(fk_scan_proj)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_scan(lng_scan)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_proj_lngg(lng_proj_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language(lng_language)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_proj_text(lng_proj_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text(lng_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_proj_user(lng_proj_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_recording</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+An recording is a sound recording of language data.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+recordingnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+recordingnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+source
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+source
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+tapenr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+tapenr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+tape_location
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+tape_location
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+informant
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+informant
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+duration
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+duration
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+recording_date
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+recording_date
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_recd_lngg(fk_recd_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language(lng_language)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_recd_proj(fk_recd_proj)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_project(lng_project)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_text_recd(fk_text_recd)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text(lng_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_user_recd(fk_user_recd)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_reference</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Bibliographic detail, to be used in tags for referencing to scholarly resources.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+referencenr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+referencenr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+author
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+author
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+year
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+year
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA4
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+place
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+place
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+catalogue_card
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+catalogue_card
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_refs_catc_1(fk_refs_catc_1)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_categorycode(lng_categorycode)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_refs_catc_2(fk_refs_catc_2)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_categorycode(lng_categorycode)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_scan</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+A scan of a manuscript which provides linguistic data
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+scannr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+scannr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+manuscript_location
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+manuscript_location
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+page
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+page
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+usernr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+usernr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+scan_date
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+scan_date
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+size
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+size
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_scan_lngg(fk_scan_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language(lng_language)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_scan_proj(fk_scan_proj)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_project(lng_project)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_text_scan(fk_text_scan)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text(lng_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_stream</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+A stream is a portion of a text and consist of elements. A stream can be used an independent example of language use.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+streamnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+streamnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+seqnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+seqnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N5
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+text
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+text
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_strm(fk_elmt_strm)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element(lng_element)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_strm_lngg(fk_strm_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language(lng_language)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_strm_text(fk_strm_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text(lng_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_strm_user(fk_strm_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_sttg_strm(fk_sttg_strm)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream_tag(lng_stream_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_stream_tag</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Annotations to streams.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA200
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_sttg_strm(fk_sttg_strm)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream(lng_stream)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_sttg_tag(fk_sttg_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_tag(lng_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_sttg_user(fk_sttg_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_tag</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+A resource table offing all possible tags that can be used to annotate texts, streams, elements and lexemes.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+tag
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+tag
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA50
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+name
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+name
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_eltg_tag(fk_eltg_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element_tag(lng_element_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxtg_tag(fk_lxtg_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex_tag(lng_lex_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_sttg_tag(fk_sttg_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream_tag(lng_stream_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_tag_ttpc(fk_tag_ttpc)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_tagtypecode(lng_tagtypecode)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_txtg_tag(fk_txtg_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text_tag(lng_text_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_tagtypecode</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Tags can be divided into several types. The type of a tag determines functionality. For instance:<BR><BR>glosse - a translation that can be used in the interlinear presentation of a text<BR>translation: a longer translation<BR>note: grammatical or antropological notes<BR>topic: the ordeirng of the data for use in active grammars<BR>link: network link to more data
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+tagtypecode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+tagtypecode
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA5
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_tag_ttpc(fk_tag_ttpc)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_tag(lng_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_text</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Texts hold each coherent language datum. Texts consist of streams, that consist of elements.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+textnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+textnr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+description
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+transcription_date
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+transcription_date
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+raw_text
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+raw_text
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_strm_text(fk_strm_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream(lng_stream)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_text_lngg(fk_text_lngg)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_language(lng_language)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_text_recd(fk_text_recd)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_recording(lng_recording)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_text_scan(fk_text_scan)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_scan(lng_scan)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_text_user(fk_text_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_txtg_text(fk_txtg_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text_tag(lng_text_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_proj_text(lng_proj_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_project(lng_project)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_text_tag</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+Annotations to texts.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+value
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA200
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+note
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+A10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+datestamp
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+D
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_txtg_tag(fk_txtg_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_tag(lng_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_txtg_text(fk_txtg_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text(lng_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+1,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_txtg_user(fk_txtg_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_user(lng_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>lng_user</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Description</B>
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+All users of the system have to be identified to ensure proper scholarly attribution.
+</DIV></P>
+<P><DIV ALIGN=LEFT>
+<B>Attribute List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Name</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Code</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Type</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>I</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>M</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+usernr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+usernr
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+N10
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+name
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+name
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+Yes
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+title
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+email
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+email
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+snailmail
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+snailmail
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fax
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+fax
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+telephone
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+telephone
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+url
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+VA255
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><P><DIV ALIGN=LEFT>
+<B>Reference List</B>
+</DIV></P>
+<TABLE BORDER=1><TH><P><DIV ALIGN=CENTER>
+<B>Relationship</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Entity</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Card</B>
+</TH>
+<TH><P><DIV ALIGN=CENTER>
+<B>Dep.</B>
+</TH>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_elmt_user(fk_elmt_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element(lng_element)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_eltg_user(fk_eltg_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_element_tag(lng_element_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lex_user(fk_lex_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex(lng_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxlx_user(fk_lxlx_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex_lex(lng_lex_lex)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_lxtg_user(fk_lxtg_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_lex_tag(lng_lex_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_strm_user(fk_strm_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream(lng_stream)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_sttg_user(fk_sttg_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_stream_tag(lng_stream_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_text_user(fk_text_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text(lng_text)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_txtg_user(fk_txtg_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_text_tag(lng_text_tag)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_user_affc(fk_user_affc)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_affiliationcode(lng_affiliationcode)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,1
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+fk_user_recd(fk_user_recd)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_recording(lng_recording)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<TR><TD><P><DIV ALIGN=LEFT>
+lng_proj_user(lng_proj_user)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+lng_project(lng_project)
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+0,n
+</TD>
+<TD><P><DIV ALIGN=LEFT>
+No
+</TD>
+</TR>
+<P>
+</P>
+</TABLE><BR>
+<BR>
+</BODY>
+</HTML>
+<H5 ALIGN=CENTER><A HREF="datamodel.html">Home Page</A></H5><BR>
+<BR>
+</BODY>
+</HTML>

@@ -1,0 +1,18 @@
+
+Kura, the linguistics database application 
+
+
+Kura is a multi-user open-source linguistics database application especially
+geared towards language description. Read the proposal for a description of
+the intended functionality and the preliminary design. 
+
+Kura is a complex application: please read the installation guide for your
+platform (INSTALL for Unix/X11, install_on_windows.txt for Windows). Please,
+read the manual, too!
+
+However, if you have problems, feel free to contact me:
+
+     boud@rempt.xs4all.nl
+
+If you want to contribute to Kura, you're very welcome. Either scratch your
+own itch, or take a look at the TODO list.

@@ -1,0 +1,57 @@
+For 2.0:
+  go through entiry pychecker log.
+
+NOTE:
+
+ Move from single hierarchy to parse sets:
+    eliminate element hierarchy except for phonemes
+
+ Client
+
+    * add import/export for lexicon
+    * integrate text import/export into the main application
+    * substitute the kurafile/kuradom for the ad-hackery in
+      the interlinear text view.
+    * add keyboard defintion files (in a pop-up list in the
+      statusbar)
+    * add a floating keyboard with real keys
+    * add in-place editors in the interlinear text view
+    * add a simple free-text interlinear editor for those in the know.
+    * test with kinput, windows IME.
+    * add support for bi-di languages.
+  
+ Server:
+
+    * Add search capabilities
+    * Add object-specific generic templates to the repository
+    * Add a more generic way of calling coded functionality
+    * Move templates to UTF_8 encoding
+    * Check server for str instead of unicode
+    * Use kuradom instead of ad-hackery in lng_text etc.
+
+  Library:
+  
+    * add plug-in parsers for different languages
+    * add xml-template for the layout definition of il-texts
+    * add simpletext import
+    * add Shoebox import/export
+    * add linguistic archive (Lacito) import/export compatibility
+    * provide the basis for adding structure and contents information,
+      leading to automatic grammars
+    * integrate recording and scans (sound & pictures)
+
+
+  Database backend:
+   
+     * add support for other databases (PostGres, Oracle, InstantDB, ODBC,
+       GadFly)
+     * check handling of recursive tables
+     
+  General:
+  
+     * Complete move to SourceForge:
+         - CVS
+         - Website
+         - Mailing lists
+         
+     * Design a better logo.
